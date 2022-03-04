@@ -1,5 +1,6 @@
 #!/bin/bash
 #!/bin/sh
+clear
 ping -c 2 cip.cc
 if [ $? -eq 0 ];then
 ip=`curl ifconfig.me`
