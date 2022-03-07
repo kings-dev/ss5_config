@@ -1,8 +1,8 @@
 #!/bin/bash
 #!/bin/sh
 clear
-echo "请等待......"
-echo "Please wait......"
+echo "请等待..........................................................................................................................."
+echo "Please wait......................................................................................................................"
 ping -c 2 cip.cc > /dev/null
 if [ $? -eq 0 ];then
 ip=`curl -s ifconfig.me`
@@ -46,7 +46,7 @@ ip=`curl -s ifconfig.me`
         case $ok in
         [yY][eE][sS]|[yY])
             cd ~
-            echo "安装中 ................................................................................"
+            echo "安装中 ...................................................................................."
             echo "Installing ................................................................................"
             yum -y install pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools > /dev/null
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz > /dev/null
