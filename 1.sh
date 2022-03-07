@@ -95,6 +95,7 @@ ip=`curl -s ifconfig.me`
             /etc/rc.d/init.d/ss5 restart
             echo -e "\n"
             echo "`netstat -anltup | grep ss5`"
+            systemctl daemon-reload
         ;;
         [nN][oO]|[nN])
             read -ep "            默认端口为：1080,
@@ -127,6 +128,7 @@ ip=`curl -s ifconfig.me`
                         firewall-cmd --reload
                         service ss5 restart && service ss5 status
                         echo "`netstat -anltup | grep ss5`"
+                        systemctl daemon-reload
                         echo -e "\n"
                     else
                         echo -e "\n\n"
@@ -141,6 +143,7 @@ ip=`curl -s ifconfig.me`
                 [nN][oO]|[nN])
                     if [ $? -eq 0 ];then
                         echo "`netstat -anltup | grep ss5`"
+                        systemctl daemon-reload
                     else
                         echo -e "\n\n"
                         echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
@@ -158,6 +161,7 @@ ip=`curl -s ifconfig.me`
         ;;
         [sS][tT][oO][pP]|[sS])
             service ss5 stop && service ss5 status
+            systemctl daemon-reload
             stop_ss5_1=`ps -ef  | grep "ss5" |awk  '{print $2}'|awk 'NR==1'`
             stop_ss5_2=`ps -ef  | grep "ss5" |awk  '{print $2}'|awk 'NR==2'`
             killall -9 $stop_ss5_1
@@ -176,6 +180,7 @@ ip=`curl -s ifconfig.me`
             /etc/rc.d/init.d/ss5 restart
             if [ $? -eq 0 ];then
                 echo "`netstat -anltup | grep ss5`"
+                systemctl daemon-reload
             else
                 echo -e "\n\n"
                 echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
@@ -187,6 +192,7 @@ ip=`curl -s ifconfig.me`
             netstat -anltup | grep ss5
             if [ $? -eq 0 ];then
                 echo "`netstat -anltup | grep ss5`"
+                systemctl daemon-reload
             else
                 echo -e "\n"
                 echo "############################################################################################################################################################"
@@ -247,6 +253,7 @@ fi
     fi
 ip2=`curl -s ifconfig.me`
 port_end=`netstat -anltup | grep ss5 | awk  '{print $4}'|awk -F":" '{ print $2 }'`
+systemctl daemon-reload
 echo -e "\n"
 echo "##############################################################################################################################"
 echo -e "\n\n"
