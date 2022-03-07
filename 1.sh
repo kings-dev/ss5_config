@@ -6,10 +6,7 @@ if [ $? -eq 0 ];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     echo -e "\n"
-    echo "                              当前的华为云服务器公网 IP (EIP)
-                                                               >>>>>: $ip"
-    echo "                        HUAWEI CLOUD server public IP (EIP)
-                                                               >>>>>: $ip"
+    echo "                  华为云服务器公网 IP (EIP)|HUAWEI CLOUD server public IP (EIP)   >>>>>:    $ip"
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
@@ -238,8 +235,7 @@ port_end=`netstat -anltup | grep ss5 | awk  '{print $4}'|awk -F":" '{ print $2 }
 echo -e "\n"
 echo "##############################################################################################################################"
 echo -e "\n\n"
-echo "                                         华为云服务器公网 IP (EIP)和ss5端口          >>>>: $ip2:$port_end"
-echo "                              HUAWEI CLOUD server public IP (EIP) and ss5 port    >>>>: $ip2:$port_end"
+echo "            华为云服务器公网 IP (EIP)和ss5端口|HUAWEI CLOUD server public IP (EIP) and ss5 port  >>>>: $ip2:$port_end"
 echo -e "\n\n"
 echo "##############################################################################################################################"
 exit 0
