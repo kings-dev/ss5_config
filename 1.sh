@@ -5,10 +5,10 @@ ping -c 2 cip.cc
 if [ $? -eq 0 ];then
 ip=`curl ifconfig.me`
     echo "##############################################################################################################################"
-    echo "#                                                                                                                            #"
-    echo "      你的华为云服务器公网 IP (EIP) >>>>: $ip"
-    echo "      Your HUAWEI CLOUD server public IP (EIP) >>>>: $ip"
-    echo "#                                                                                                                            #"
+    echo -e "\n"
+    echo "      你的华为云服务器公网 IP (EIP)                       >>>>: $ip"
+    echo "      Your HUAWEI CLOUD server public IP (EIP)          >>>>: $ip"
+    echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc | grep "华为云" |awk '{print $5}'`
     if [ $huawei = "华为云" ];then
@@ -151,10 +151,10 @@ ip=`curl ifconfig.me`
             killall -9 ss5
             echo -e "\n"
             echo "##############################################################################################################################"
-            echo "#                                                                                                                            #"
-            echo "                     已停止ss5服务，下次开机运行!!!"
-            echo "The ss5 service has been stopped, and it will run on the next boot!!!"
-            echo "#                                                                                                                            #"
+            echo -e "\n"
+            echo "                                              已停止ss5服务，下次开机运行!!!"
+            echo "                          The ss5 service has been stopped, and it will run on the next boot!!!"
+            echo -e "\n"
             echo "##############################################################################################################################"
             echo -e "\n"
         ;;
@@ -176,10 +176,10 @@ ip=`curl ifconfig.me`
             else
                 echo -e "\n"
                 echo "############################################################################################################################################################"
-                echo "#                                                                                                                                                          #"
-                echo "        未安装ss5或未运行ss5;请重新运行 ss5_install_config.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!"
+                echo -e "\n"
+                echo "                     未安装ss5或未运行ss5;请重新运行 ss5_install_config.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!"
                 echo "ss5 is not installed or running; please re-run the ss5_install_config.sh script and enter [install compile: "Y" or "y" ] or [start process: "r" or "R" ]!!! "
-                echo "#                                                                                                                                                          #"
+                echo -e "\n"
                 echo "############################################################################################################################################################"
                 echo -e "\n"
             fi
@@ -216,30 +216,28 @@ fi
     if [ $? -eq 0 ];then
         echo -e "\n"
         echo "##############################################################################################################################"
-        echo "#                                                                                                                            #"
-        echo "       脚本运行成功;请确保 Huawei Cloud 云服务器防火墙全放通 TCP 和 UDP "
-        echo "The script runs successfully; please ensure that the firewall of Huawei Cloud cloud server allows all TCP and UDP"
-        echo "#                                                                                                                            #"
+        echo -e "\n"
+        echo "                        脚本运行成功;请确保 Huawei Cloud 云服务器防火墙全放通 TCP 和 UDP "
+        echo "       The script runs successfully; please ensure that the firewall of Huawei Cloud cloud server allows all TCP and UDP"
+        echo -e "\n"
         echo "##############################################################################################################################"
         echo -e "\n"
     else
         echo -e "\n"
         echo "##############################################################################################################################"
-        echo "#                                                                                                                            #"
-        echo "    未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
-        echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
-        echo "#                                                                                                                            #"
+        echo -e "\n"
+        echo "                         未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
+        echo "             ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
+        echo -e "\n"
         echo "##############################################################################################################################"
     fi
 ip=`curl ifconfig.me`
 port_end=`netstat -anltup | grep ss5 | awk  '{print $4}'|awk -F":" '{ print $2 }'`
 echo -e "\n"
 echo "##############################################################################################################################"
-echo "#                                                                                                                            #"
-echo "#                                                                                                                            #"
-echo "      你的华为云服务器公网 IP (EIP) 和ss5端口 >>>>: $ip:$port_end"
-echo "   Your HUAWEI CLOUD server public IP (EIP) and ss5 port >>>>: $ip:$port_end"
-echo "#                                                                                                                            #"
-echo "#                                                                                                                            #"
+echo -e "\n\n"
+echo "                                      你的华为云服务器公网 IP (EIP) 和ss5端口       >>>>: $ip:$port_end"
+echo "                         Your HUAWEI CLOUD server public IP (EIP) and ss5 port    >>>>: $ip:$port_end"
+echo -e "\n\n"
 echo "##############################################################################################################################"
 exit 0
