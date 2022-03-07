@@ -107,6 +107,7 @@ ip=`curl ifconfig.me`
                         firewall-cmd --reload
                         service ss5 restart && service ss5 status
                         echo "`netstat -anltup | grep ss5`"
+                        echo -e "\n"
                     else
                         echo -e "\n\n"
                         echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
