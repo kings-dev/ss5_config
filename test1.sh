@@ -127,8 +127,8 @@ ip=`curl -s ifconfig.me`
                         firewall-cmd --add-port=$ss5_Port/tcp --permanent
                         firewall-cmd --reload
                         service ss5 restart && service ss5 status
-                        echo "`netstat -anltup | grep ss5`"
                         systemctl daemon-reload
+                        echo "`netstat -anltup | grep ss5`"
                         echo -e "\n"
                     else
                         echo -e "\n\n"
@@ -142,8 +142,8 @@ ip=`curl -s ifconfig.me`
                 ;;
                 [nN][oO]|[nN])
                     if [ $? -eq 0 ];then
-                        echo "`netstat -anltup | grep ss5`"
                         systemctl daemon-reload
+                        echo "`netstat -anltup | grep ss5`"
                     else
                         echo -e "\n\n"
                         echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
