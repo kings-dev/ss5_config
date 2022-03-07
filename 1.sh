@@ -7,6 +7,7 @@ ip=`curl ifconfig.me`
     echo "###########################################################"
     echo "#                                                         #"
     echo "      你的华为云服务器公网 IP (EIP) >>>>: $ip"
+    echo "      Your HUAWEI CLOUD server public IP (EIP) >>>>: $ip"
     echo "#                                                         #"
     echo "###########################################################"
     huawei=`curl cip.cc | grep "华为云" |awk '{print $5}'`
@@ -15,20 +16,28 @@ ip=`curl ifconfig.me`
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
         read -ep "现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,操作请输入（英文提示符号）再回车:
+        Now build the ss5 application service to download and install the Centos 7.6 environment dependency package and source package, please enter (English prompt symbol) and press Enter:
 
         [安装编译: "Y" 或 "y" ]
+        [Install build: "Y" or "y" ]
 #
         [修改端口: "n" 或 "N" ]
+        [Modify port: "n" or "N" ]
 #
         [退出脚本: "q" 或 "Q" ]
+        [Exit script: "q" or "Q" ]
 #
         [关闭进程: "s" 或 "S" ]
+        [close process: "s" or "S" ]
 #
         [启动进程: "r" 或 "R" ]
+        [start process: "r" or "R" ]
 #
         [进程状态: "z" 或 "Z" ]
+        [process status: "z" or "Z" ]
 
         [卸载程序: "u" 或 "U" ]
+        [Uninstaller: "u" or "U" ]
 #
         >> " ok
         case $ok in
@@ -71,18 +80,22 @@ ip=`curl ifconfig.me`
         ;;
         [nN][oO]|[nN])
             read -ep "默认端口为：1080,如需修改SS5端口(1-65535)操作请输入（英文提示符号）再回车:
+            The default port is: 1080. If you need to modify the SS5 port (1-65535), please enter (English prompt symbol) and press Enter:
 
             [定义端口: "Y" 或 "y" ]
+            [Define port: "Y" or "y" ]
 #
             [不改端口: "n" 或 "N" ]
+            [Do not change port: "n" or "N" ]
 #
             [退出脚本: "q" 或 "Q" ]
+            [Exit script: "q" or "Q" ]
 #
             >> " ok0
             case $ok0 in
                 [yY][eE][sS]|[yY])
-                    echo "已使用端口(IP:端口)：`netstat -anultp`"
-                    read -ep "输入 '未使用' 端口号（1-65535）: " ss5_Port
+                    echo "已使用端口(IP:端口)Port used (IP:Port)：`netstat -anultp`"
+                    read -ep "输入 '未使用' 端口号Enter the 'unused' port number（1-65535）: " ss5_Port
                     sed -i '2c SS5_OPTS=" -u root -b 0.0.0.0:'$ss5_Port'"' /etc/sysconfig/ss5
                     sed -i '2c export SS5_SOCKS_PORT='$ss5_Port'' /etc/init.d/ss5
                     if [ $? -eq 0 ];then
@@ -97,6 +110,7 @@ ip=`curl ifconfig.me`
                     else
                         echo -e "\n\n"
                         echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
+                        echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
                         echo -e "\n\n"
                     fi
                     chmod 755 /etc/init.d/ss5
@@ -109,6 +123,7 @@ ip=`curl ifconfig.me`
                     else
                         echo -e "\n\n"
                         echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
+                        echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
                         echo -e "\n\n"
                     fi
                 ;;
@@ -129,7 +144,8 @@ ip=`curl ifconfig.me`
             killall -9 ss5
             echo "#########################################################################"
             echo "#                                                                       #"
-            echo "                     已停止ss5服务，下次开机运行!!!                          "
+            echo "                     已停止ss5服务，下次开机运行!!!"
+            echo "The ss5 service has been stopped, and it will run on the next boot!!!"
             echo "#                                                                       #"
             echo "#########################################################################"
         ;;
@@ -140,6 +156,7 @@ ip=`curl ifconfig.me`
             else
                 echo -e "\n\n"
                 echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
+                echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
                 echo -e "\n\n"
             fi
         ;;
@@ -150,7 +167,8 @@ ip=`curl ifconfig.me`
             else
                 echo "################################################################################################################################"
                 echo "#                                                                                                                              #"
-                echo "           未安装ss5或未运行ss5;请重新运行 ss5_install_config.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!           "
+                echo "        未安装ss5或未运行ss5;请重新运行 ss5_install_config.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!"
+                echo "ss5 is not installed or running; please re-run the ss5_install_config.sh script and enter [install compile: "Y" or "y" ] or [start process: "r" or "R" ]!!! "
                 echo "#                                                                                                                              #"
                 echo "################################################################################################################################"
             fi
@@ -174,6 +192,7 @@ ip=`curl ifconfig.me`
     else
         echo -e "\n\n"
         echo "请在华为云弹性云服务器ECS上使用 ss5_install_config.sh 脚本!!!"
+        echo "Please use the ss5_install_config.sh script on HUAWEI CLOUD ECS!!!"
         echo -e "\n\n"
     fi
 else
@@ -186,6 +205,7 @@ fi
         echo "#########################################################################"
         echo "#                                                                       #"
         echo "       脚本运行成功;请确保 Huawei Cloud 云服务器防火墙全放通 TCP 和 UDP "
+        echo "The script runs successfully; please ensure that the firewall of Huawei Cloud cloud server allows all TCP and UDP"
         echo "#                                                                       #"
         echo "#########################################################################"
         echo -e "\n\n\n\n"
@@ -193,6 +213,7 @@ fi
         echo "#########################################################################"
         echo "#                                                                       #"
         echo "    未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
+        echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
         echo "#                                                                       #"
         echo "#########################################################################"
     fi
@@ -202,6 +223,7 @@ echo "##########################################################################
 echo "#                                                                                #"
 echo "#                                                                                #"
 echo "      你的华为云服务器公网 IP (EIP) 和ss5端口 >>>>: $ip:$port_end"
+echo "   Your HUAWEI CLOUD server public IP (EIP) and ss5 port >>>>: $ip:$port_end"
 echo "#                                                                                #"
 echo "#                                                                                #"
 echo "##################################################################################"
