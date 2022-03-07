@@ -15,8 +15,10 @@ ip=`curl ifconfig.me`
         export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
-        read -ep "现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,操作请输入（英文提示符号）再回车:
-        Now build the ss5 application service to download and install the Centos 7.6 environment dependency package and source package, please enter (English prompt symbol) and press Enter:
+        read -ep "现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
+        操作请输入（英文提示符号）再回车:
+        Now build the ss5 application service to download and install the Centos 7.6 environment dependency package and source package,
+        please enter (English prompt symbol) and press Enter:
 
         [安装编译: "Y" 或 "y" ]
         [Install build: "Y" or "y" ]
@@ -81,8 +83,10 @@ ip=`curl ifconfig.me`
             echo "`netstat -anltup | grep ss5`"
         ;;
         [nN][oO]|[nN])
-            read -ep "默认端口为：1080,如需修改SS5端口(1-65535)操作请输入（英文提示符号）再回车:
-            The default port is: 1080. If you need to modify the SS5 port (1-65535), please enter (English prompt symbol) and press Enter:
+            read -ep "默认端口为：1080,
+            如需修改SS5端口(1-65535)操作请输入（英文提示符号）再回车:
+            The default port is: 1080. If you need to modify the SS5 port (1-65535), 
+            please enter (English prompt symbol) and press Enter:
 
             [定义端口: "Y" 或 "y" ]
             [Define port: "Y" or "y" ]
