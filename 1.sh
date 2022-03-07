@@ -6,8 +6,10 @@ if [ $? -eq 0 ];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     echo -e "\n"
-    echo "                              当前的华为云服务器公网 IP (EIP)           >>>>: $ip"
-    echo "                        HUAWEI CLOUD server public IP (EIP)          >>>>: $ip"
+    echo "                              当前的华为云服务器公网 IP (EIP)
+                                                               >>>>>: $ip"
+    echo "                        HUAWEI CLOUD server public IP (EIP)
+                                                               >>>>>: $ip"
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
