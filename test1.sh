@@ -14,7 +14,7 @@ ip=`curl -s ifconfig.me`
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
-    if [ -z $huawei ];then
+    if [ -z "$huawei" ];then
         export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
