@@ -2,7 +2,7 @@ cat << "EOF" > /root/0.sh
 #!/bin/bash
 #!/bin/sh
 clear
-ping -c 4 raw.githubusercontent.com
+ping -c 2 raw.githubusercontent.com
 if [ $? -eq 0 ];then
     wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
     cd ~
