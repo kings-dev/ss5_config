@@ -15,4 +15,4 @@ else
 fi
 exit 0
 EOF
-sh 0.sh
+cd ~;sh 0.sh
