@@ -86,7 +86,7 @@ ip=`curl -s ifconfig.me`
             如需修改SS5端口(1-65535)操作请输入（英文提示符号）再回车:
             The default port is: 1080. If you need to modify the SS5 port (1-65535), 
             please enter (English prompt symbol) and press Enter:
-
+#
             [定义端口: "Y" 或 "y" ]
             [Define port: "Y" or "y" ]
 #
