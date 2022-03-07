@@ -75,7 +75,9 @@ ip=`curl ifconfig.me`
             fi
             systemctl daemon-reload
             service ss5 start && service ss5 status
+            echo -e "\n"
             /etc/rc.d/init.d/ss5 restart
+            echo -e "\n"
             echo "`netstat -anltup | grep ss5`"
         ;;
         [nN][oO]|[nN])
@@ -143,12 +145,14 @@ ip=`curl ifconfig.me`
             killall -9 $stop_ss5_1
             killall -9 $stop_ss5_2
             killall -9 ss5
+            echo -e "\n"
             echo "##############################################################################################################################"
             echo "#                                                                                                                            #"
             echo "                     已停止ss5服务，下次开机运行!!!"
             echo "The ss5 service has been stopped, and it will run on the next boot!!!"
             echo "#                                                                                                                            #"
             echo "##############################################################################################################################"
+            echo -e "\n"
         ;;
         [rR][eE][sS][tT][aA][rR][tT]|[rR])
             /etc/rc.d/init.d/ss5 restart
@@ -166,12 +170,14 @@ ip=`curl ifconfig.me`
             if [ $? -eq 0 ];then
                 echo "`netstat -anltup | grep ss5`"
             else
+                echo -e "\n"
                 echo "############################################################################################################################################################"
                 echo "#                                                                                                                                                          #"
                 echo "        未安装ss5或未运行ss5;请重新运行 ss5_install_config.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!"
                 echo "ss5 is not installed or running; please re-run the ss5_install_config.sh script and enter [install compile: "Y" or "y" ] or [start process: "r" or "R" ]!!! "
                 echo "#                                                                                                                                                          #"
                 echo "############################################################################################################################################################"
+                echo -e "\n"
             fi
         ;;
         [uU][nN][iI][nN][sS][tT][aA][lL][lL]|[uU])
@@ -204,16 +210,16 @@ else
 fi
 
     if [ $? -eq 0 ];then
-        echo -e "\n\n"
+        echo -e "\n"
         echo "##############################################################################################################################"
         echo "#                                                                                                                            #"
         echo "       脚本运行成功;请确保 Huawei Cloud 云服务器防火墙全放通 TCP 和 UDP "
         echo "The script runs successfully; please ensure that the firewall of Huawei Cloud cloud server allows all TCP and UDP"
         echo "#                                                                                                                            #"
         echo "##############################################################################################################################"
-        echo -e "\n\n\n\n"
+        echo -e "\n"
     else
-        echo -e "\n\n"
+        echo -e "\n"
         echo "##############################################################################################################################"
         echo "#                                                                                                                            #"
         echo "    未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
