@@ -1,16 +1,16 @@
 #!/bin/bash
 #!/bin/sh
 clear
-ping -c 2 cip.cc
+ping -c 2 cip.cc > /dev/null
 if [ $? -eq 0 ];then
-ip=`curl -s ifconfig.me > /dev/null`
+ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     echo -e "\n"
     echo "      你的华为云服务器公网 IP (EIP)                      >>>>: $ip"
     echo "      Your HUAWEI CLOUD server public IP (EIP)          >>>>: $ip"
     echo -e "\n"
     echo "##############################################################################################################################"
-    huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}' > /dev/null`
+    huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
     if [ $huawei = "华为云" ];then
         export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
@@ -231,7 +231,7 @@ fi
         echo -e "\n"
         echo "##############################################################################################################################"
     fi
-ip=`curl -s ifconfig.me > /dev/null`
+ip=`curl -s ifconfig.me`
 port_end=`netstat -anltup | grep ss5 | awk  '{print $4}'|awk -F":" '{ print $2 }'`
 echo -e "\n"
 echo "##############################################################################################################################"
