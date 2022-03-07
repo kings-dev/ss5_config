@@ -126,8 +126,8 @@ ip=`curl -s ifconfig.me`
                         /usr/sbin/iptables -I INPUT -p tcp --dport $ss5_Port -j ACCEPT
                         firewall-cmd --add-port=$ss5_Port/tcp --permanent
                         firewall-cmd --reload
-                        service ss5 restart && service ss5 status
                         systemctl daemon-reload
+                        service ss5 restart && service ss5 status
                         echo "`netstat -anltup | grep ss5`"
                         echo -e "\n"
                     else
