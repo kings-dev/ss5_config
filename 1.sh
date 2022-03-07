@@ -44,9 +44,9 @@ ip=`curl -s ifconfig.me`
         case $ok in
         [yY][eE][sS]|[yY])
             cd ~
-            yum -y install pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools
-            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz
-            tar -xzvf ss5-3.8.9-8.tar.gz
+            yum -y install pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools > /dev/null
+            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz > /dev/null
+            tar -xzvf ss5-3.8.9-8.tar.gz > /dev/null
             cd /root/ss5-3.8.9/
             ./configure > /dev/null
             make > /dev/null
