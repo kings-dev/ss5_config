@@ -53,18 +53,18 @@ ip=`curl -s ifconfig.me`
             yum -y install pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools > /dev/null
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz > /dev/null
             tar -xzvf ss5-3.8.9-8.tar.gz > /dev/null 2>&1
-            echo "解压 OK"
-            echo "Unzip Ok"
+            echo "解压........OK"
+            echo "Unzip.......Ok"
             cd /root/ss5-3.8.9/
             ./configure > /dev/null 2>&1
-            echo "配置 OK"
-            echo "Configure OK"
+            echo "配置........OK"
+            echo "Configure...OK"
             make > /dev/null 2>&1
-            echo "编译 OK"
-            echo "Compile OK"
+            echo "编译........OK"
+            echo "Compile.....OK"
             make install > /dev/null 2>&1
-            echo "安装 OK"
-            echo "Install OK"
+            echo "安装........OK"
+            echo "Install.....OK"
             confFile=/etc/opt/ss5/ss5.conf
             sed -i '87c auth    0.0.0.0/0       -               -' $confFile
             sed -i '203c permit -        0.0.0.0/0       -       0.0.0.0/0       -       -       -       -       -' $confFile
