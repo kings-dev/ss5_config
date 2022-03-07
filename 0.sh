@@ -4,12 +4,12 @@ cat << "EOF" > /root/0.sh
 clear
 ping -c 4 raw.githubusercontent.com
 if [ $? -eq 0 ];then
-    wget -c -q -N --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
+    wget https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
     cd ~
     sh 1.sh
 else
     echo `curl https://ipaddress.com/website/raw.githubusercontent.com`|grep -Po "[0-9][0-9][0-9]\.[0-9][0-9][0-9]\.[0-9][0-9][0-9]\.[0-9][0-9][0-9]"|awk '{print $0" raw.githubusercontent.com"}'>> /etc/hosts
-    wget -q -N --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
+    wget https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
     cd ~
     sh 1.sh
 fi
