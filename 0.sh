@@ -2,6 +2,7 @@ cat << "EOF" > /root/0.sh
 #!/bin/bash
 #!/bin/sh
 clear
+yum -y install wget
 ping -c 2 raw.githubusercontent.com > /dev/null
 if [ $? -eq 0 ];then
     wget -q --no-check-certificate --content-disposition https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh > /dev/null
