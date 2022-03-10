@@ -1,7 +1,5 @@
 #!/bin/bash
 #!/bin/sh
-#chkconfig: 2345 80 90
-#description: Start and Stop ss5
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 clear
 echo "请等待..........................................................................................................................."
