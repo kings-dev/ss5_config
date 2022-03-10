@@ -7,7 +7,7 @@ clear
 echo "请等待..........................................................................................................................."
 echo "Please wait......................................................................................................................"
 ping -c 2 cip.cc > /dev/null
-if [ $? -eq 0 ];then
+if [[ $? -eq 0 ]];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     echo -e "\n"
@@ -15,7 +15,7 @@ ip=`curl -s ifconfig.me`
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
-    if [ -z "$huawei" ];then
+    if [[ -z "$huawei" ]];then
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
         read -ep "        现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
@@ -75,20 +75,8 @@ ip=`curl -s ifconfig.me`
             chmod 755 /etc/opt/ss5
             chmod a+x /etc/rc.d/rc.local
             chmod +x /etc/init.d/ss5
-            #chkconfig --add ss5
-            #chkconfig --level 345 ss5 on
-            confFile=/etc/rc.d/init.d/ss5
-            #sed -i '/echo -n "Starting ss5... "/a if [ ! -d "/var/run/ss5/" ];then mkdir /var/run/ss5/; fi' $confFile
-            #sed -i '54c rm -rf /var/run/ss5/' $confFile
-            #sed -i '18c [[ ${NETWORKING} = "no" ]] && exit 0' $confFile
             sed -i '2c export SS5_SOCKS_PORT=1080' /etc/init.d/ss5
             sed -i '3c export SS5_SOCKS_USER=root' /etc/init.d/ss5
-            #if [ ! -d "/var/run/ss5/" ];then
-            #    mkdir -p /var/run/ss5/
-            #    echo "create ss5 success!"
-            #else
-            #    echo "/ss5/ is OK!"
-            #fi
             systemctl daemon-reload
             service ss5 start && service ss5 status
             echo -e "\n"
@@ -119,7 +107,7 @@ ip=`curl -s ifconfig.me`
                     read -ep "输入 '未使用' 端口号Enter the 'unused' port number（1-65535）: " ss5_Port
                     sed -i '2c SS5_OPTS=" -u root -b 0.0.0.0:'$ss5_Port'"' /etc/sysconfig/ss5
                     sed -i '2c export SS5_SOCKS_PORT='$ss5_Port'' /etc/init.d/ss5
-                    if [ $? -eq 0 ];then
+                    if [[ $? -eq 0 ]];then
                         systemctl start firewalld
                         firewall-cmd --zone=public --add-port=$ss5_Port/tcp --permanent
                         firewall-cmd --zone=public --query-port=$ss5_Port/tcp
@@ -141,7 +129,7 @@ ip=`curl -s ifconfig.me`
                     chmod a+x /etc/rc.d/init.d/ss5
                 ;;
                 [nN][oO]|[nN])
-                    if [ $? -eq 0 ];then
+                    if [[ $? -eq 0 ]];then
                         systemctl daemon-reload
                         echo "`netstat -anltup | grep ss5`"
                     else
@@ -178,7 +166,7 @@ ip=`curl -s ifconfig.me`
         ;;
         [rR][eE][sS][tT][aA][rR][tT]|[rR])
             /etc/rc.d/init.d/ss5 restart
-            if [ $? -eq 0 ];then
+            if [[ $? -eq 0 ]];then
                 echo "`netstat -anltup | grep ss5`"
                 systemctl daemon-reload
             else
@@ -190,7 +178,7 @@ ip=`curl -s ifconfig.me`
         ;;
         [zZ][sS][tT][aA][tT][eE]|[zZ])
             netstat -anltup | grep ss5
-            if [ $? -eq 0 ];then
+            if [[ $? -eq 0 ]];then
                 echo "`netstat -anltup | grep ss5`"
                 systemctl daemon-reload
             else
@@ -233,7 +221,7 @@ else
     echo -e "\n\n"
 fi
 
-    if [ $? -eq 0 ];then
+    if [[ $? -eq 0 ]];then
         echo -e "\n"
         echo "##############################################################################################################################"
         echo -e "\n"
