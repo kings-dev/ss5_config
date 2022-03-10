@@ -75,11 +75,11 @@ ip=`curl -s ifconfig.me`
             chmod 755 /etc/opt/ss5
             chmod a+x /etc/rc.d/rc.local
             chmod +x /etc/init.d/ss5
-            #chkconfig --add ss5
-            #chkconfig --level 345 ss5 on
+            chkconfig --add ss5
+            chkconfig --level 345 ss5 on
             confFile=/etc/rc.d/init.d/ss5
-            #sed -i '/echo -n "Starting ss5... "/a if [ ! -d "/var/run/ss5/" ];then mkdir /var/run/ss5/; fi' $confFile
-            #sed -i '54c rm -rf /var/run/ss5/' $confFile
+            sed -i '/echo -n "Starting ss5... "/a if [ ! -d "/var/run/ss5/" ];then mkdir /var/run/ss5/; fi' $confFile
+            sed -i '54c rm -rf /var/run/ss5/' $confFile
             sed -i '18c [[ ${NETWORKING} = "no" ]] && exit 0' $confFile
             sed -i '2c export SS5_SOCKS_PORT=1080' /etc/init.d/ss5
             sed -i '3c export SS5_SOCKS_USER=root' /etc/init.d/ss5
