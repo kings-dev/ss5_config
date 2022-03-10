@@ -16,5 +16,4 @@ else
 fi
 exit 0
 EOF
-cd ~
-sh test0.sh
+cd ~&&sh test0.sh
