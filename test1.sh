@@ -2,6 +2,7 @@
 #!/bin/sh
 #chkconfig: 2345 80 90
 #description: Start and Stop ss5
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 clear
 echo "请等待..........................................................................................................................."
 echo "Please wait......................................................................................................................"
@@ -15,7 +16,6 @@ ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
     if [ -z "$huawei" ];then
-        export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
         read -ep "        现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
