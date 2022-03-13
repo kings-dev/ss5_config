@@ -13,7 +13,7 @@ ip=`curl -s ifconfig.me`
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
-    if [[ -z "$huawei" ]];then
+    if [[ $huawei = "华为云" ]];then
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
         read -ep "        现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
