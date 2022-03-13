@@ -18,9 +18,9 @@ if [ $? -eq 0 ];then
     echo "`$fip$x4`"
     firewall-cmd --reload
     service firewalld restart
-    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/test1.sh -O /root/test_install.sh && cd ~ && sh test_install.sh
+    wget -q --no-check-certificate https://raw.fastgit.org/kings-dev/ss5_config/main/test1.sh -O /root/test_install.sh && cd ~ && sh test_install.sh
 else
-    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/test1.sh -O /root/test_install.sh && cd ~ && sh test_install.sh
+    wget -q --no-check-certificate https://raw.fastgit.org/kings-dev/ss5_config/main/test1.sh -O /root/test_install.sh && cd ~ && sh test_install.sh
 fi
 exit 0
 EOF
