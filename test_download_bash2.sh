@@ -1,4 +1,4 @@
-cat << "EOF" > /root/test0.sh
+cat << "EOF" > /root/test_download_bash2.sh
 #!/bin/bash
 #!/bin/sh
 yum -y install wget libssl-dev openssl > /dev/null
@@ -18,10 +18,10 @@ if [ $? -eq 0 ];then
     echo "`$fip$x4`"
     firewall-cmd --reload
     service firewalld restart
-    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/test1.sh -O /root/test1.sh && cd ~ && sh test1.sh
+    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/test1.sh -O /root/test_install.sh && cd ~ && sh test_install.sh
 else
-    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/test1.sh -O /root/test1.sh && cd ~ && sh test1.sh
+    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/test1.sh -O /root/test_install.sh && cd ~ && sh test_install.sh
 fi
 exit 0
 EOF
-cd ~ && sh test0.sh
+cd ~ && sh test_download_bash2.sh
