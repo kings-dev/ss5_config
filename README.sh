@@ -3,7 +3,11 @@ Centos 7 系统操作bash shell：复制0.sh里面代码到 bash shell 窗口回
 命令 sh 0.sh (会下载文件到/root/1.sh);
 命令 sh 1.sh (再次运行脚本安装等).
 
-code:
+1.code:
+
+wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
+
+2.code:
 
 cat << "EOF" > /root/0.sh
 #!/bin/bash
@@ -36,3 +40,4 @@ fi
 exit 0
 EOF
 cd ~ && sh 0.sh
+
