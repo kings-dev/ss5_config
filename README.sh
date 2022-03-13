@@ -33,10 +33,12 @@ if [ $? -eq 0 ];then
     service firewalld restart
     wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
     wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
+    wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh -O /root/1.sh
     cd ~;bash 1.sh
 else
     wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
     wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
+    wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh -O /root/1.sh
     cd ~;bash 1.sh
 fi
 exit 0
