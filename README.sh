@@ -6,7 +6,7 @@ Centos 7 系统操作bash shell：复制0.sh里面代码到 bash shell 窗口回
 --------------------------------
 1.code:
 
-wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/1.sh;bash 1.sh
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/huawei_install.sh;bash huawei_install.sh
 
 ###########################################################################################################################################################
 2.code:
@@ -31,15 +31,15 @@ if [ $? -eq 0 ];then
     echo "`$fip$x4`"
     firewall-cmd --reload
     service firewalld restart
-    #wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
-    #wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
-    wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/1.sh -O /root/1.sh
-    cd ~;bash 1.sh
+    #wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O /root/huawei_install.sh
+    #wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O /root/huawei_install.sh
+    #wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/huawei_install.sh -O /root/huawei_install.sh
+    cd ~;bash huawei_install.sh
 else
-    #wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
-    #wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/1.sh -O /root/1.sh
-    wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/1.sh -O /root/1.sh
-    cd ~;bash 1.sh
+    #wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O /root/huawei_install.sh
+    #wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O /root/huawei_install.sh
+    wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/huawei_install.sh -O /root/huawei_install.sh
+    cd ~;bash huawei_install.sh
 fi
 exit 0
 EOF
