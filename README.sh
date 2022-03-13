@@ -6,7 +6,7 @@ Centos 7 系统操作bash shell：复制0.sh里面代码到 bash shell 窗口回
 --------------------------------
 1.code:
 
-wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/1.sh -O /root/1.sh && cd ~;bash 1.sh
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/1.sh -O /root/1.sh && cd ~;bash 1.sh
 
 ###########################################################################################################################################################
 2.code:
@@ -49,11 +49,11 @@ cd ~ && sh 0.sh
 Other test bashshell ECS or Centos 7:
 3.code:
 
-wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/test_install.sh -O /root/test_install.sh && cd ~;bash test_install.sh
+wget -q -N --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/test_install.sh -O /root/test_install.sh && cd ~;bash test_install.sh
 
 4.code:
 
-wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh -O /root/test_install.sh && cd ~;bash test_install.sh
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh -O /root/test_install.sh && cd ~;bash test_install.sh
 
 ############################################################################################################################################################################################
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
