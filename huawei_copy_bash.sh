@@ -1,4 +1,4 @@
-cat << "EOF" > /root/huawei_bash.sh
+cat << "EOF" > /root/huawei_copy_bash.sh
 #!/bin/bash
 #!/bin/sh
 yum -y install wget libssl-dev openssl > /dev/null
@@ -30,5 +30,5 @@ else
 fi
 exit 0
 EOF
-cd ~ && sh huawei_bash.sh
+cd ~ && sh huawei_copy_bash.sh
 
