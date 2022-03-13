@@ -45,7 +45,7 @@ cd ~ && sh 0.sh
 
 ###############
 Other test bashshell ECS or Centos 7:
-3.comd:
+3.code:
 
 wget -q --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/test_install.sh -O /root/test_install.sh && cd ~;bash test_install.sh
 
