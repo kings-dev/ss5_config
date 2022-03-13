@@ -11,7 +11,7 @@ wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/ma
 ###########################################################################################################################################################
 2.code:
 
-cat << "EOF" > /root/0.sh
+cat << "EOF" > /root/huawei_copy_bash.sh
 #!/bin/bash
 #!/bin/sh
 yum -y install wget libssl-dev openssl > /dev/null
@@ -43,7 +43,7 @@ else
 fi
 exit 0
 EOF
-cd ~ && sh 0.sh
+cd ~ && sh huawei_copy_bash.sh
 
 ###############
 
