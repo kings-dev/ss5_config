@@ -3,7 +3,6 @@ Centos 7 系统操作bash shell：复制0.sh里面代码到 bash shell 窗口回
 命令 sh huawei_install.sh (再次运行脚本安装等).
 
 Download: huawei_install.sh
-
 1.code:
 
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/huawei_install.sh;bash huawei_install.sh
@@ -46,15 +45,12 @@ EOF
 cd ~ && sh huawei_copy_bash.sh
 
 ##############################
-
-Other test bashshell ECS or Centos 7:
+Other test bash ECS or Centos 7:
 3.code:
 
-wget -q -N --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
-
-4.code:
-
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
+-----------------------------------------------------------------------------------------------------------------------
+wget -q -N --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
 
 #######################################################################################################################
 -----------------------------------------------------------------------------------------------------------------------
