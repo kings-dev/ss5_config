@@ -4,7 +4,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 clear
 echo "请等待..........................................................................................................................."
 echo "Please wait......................................................................................................................"
-ping -c 2 cip.cc > /dev/null
+ping -c 2 cip.cc >/dev/null 2>&1
 if [[ $? -eq 0 ]];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
@@ -48,20 +48,20 @@ ip=`curl -s ifconfig.me`
             cd ~
             echo "安装中 ...................................................................................."
             echo "Installing ................................................................................"
-            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools > /dev/null
-            yum clean all;yum-complete-transaction > /dev/null
-            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz > /dev/null
-            tar -xzvf ss5-3.8.9-8.tar.gz > /dev/null 2>&1
+            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools >/dev/null 2>&1
+            yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
+            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
+            tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             echo "解压........OK"
             echo "Unzip.......Ok"
             cd /root/ss5-3.8.9/
-            ./configure > /dev/null 2>&1
+            ./configure >/dev/null 2>&1
             echo "配置........OK"
             echo "Configure...OK"
-            make > /dev/null 2>&1
+            make >/dev/null 2>&1
             echo "编译........OK"
             echo "Compile.....OK"
-            make install > /dev/null 2>&1
+            make install >/dev/null 2>&1
             echo "安装........OK"
             echo "Install.....OK"
             confFile=/etc/opt/ss5/ss5.conf
@@ -247,4 +247,5 @@ echo -e "\n\n"
 echo "             华为云服务器公网 IP (EIP)和ss5端口|HUAWEI CLOUD server public IP (EIP) and ss5 port  >>>>: $ip2:$port_end"
 echo -e "\n\n"
 echo "##############################################################################################################################"
+echo -e "\n\n"
 exit 0
