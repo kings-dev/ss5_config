@@ -119,8 +119,8 @@ ip=`curl -s ifconfig.me`
                         echo -e "\n"
                     else
                         echo -e "\n\n"
-                        echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
-                        echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
+                        echo "未安装ss5,请重新运行 test_install.sh 脚本输入 Y 或 y 进行安装!!!"
+                        echo "ss5 is not installed, please re-run the test_install.sh script and enter Y or y to install!!!"
                         echo -e "\n\n"
                     fi
                     chmod 755 /etc/init.d/ss5
@@ -133,8 +133,8 @@ ip=`curl -s ifconfig.me`
                         echo "`netstat -anltup | grep ss5`"
                     else
                         echo -e "\n\n"
-                        echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
-                        echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
+                        echo "未安装ss5,请重新运行 test_install.sh 脚本输入 Y 或 y 进行安装!!!"
+                        echo "ss5 is not installed, please re-run the test_install.sh script and enter Y or y to install!!!"
                         echo -e "\n\n"
                     fi
                 ;;
@@ -170,8 +170,8 @@ ip=`curl -s ifconfig.me`
                 systemctl daemon-reload
             else
                 echo -e "\n\n"
-                echo "未安装ss5,请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
-                echo "ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
+                echo "未安装ss5,请重新运行 test_install.sh 脚本输入 Y 或 y 进行安装!!!"
+                echo "ss5 is not installed, please re-run the test_install.sh script and enter Y or y to install!!!"
                 echo -e "\n\n"
             fi
         ;;
@@ -184,8 +184,8 @@ ip=`curl -s ifconfig.me`
                 echo -e "\n"
                 echo "############################################################################################################################################################"
                 echo -e "\n"
-                echo "                     未安装ss5或未运行ss5;请重新运行 ss5_install_config.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!"
-                echo "ss5 is not installed or running; please re-run the ss5_install_config.sh script and enter [install compile: "Y" or "y" ] or [start process: "r" or "R" ]!!!"
+                echo "                     未安装ss5或未运行ss5;请重新运行 test_install.sh 脚本输入 [安装编译: "Y" 或 "y" ] 或 [启动进程: "r" 或 "R" ]!!!"
+                echo "ss5 is not installed or running; please re-run the test_install.sh script and enter [install compile: "Y" or "y" ] or [start process: "r" or "R" ]!!!"
                 echo -e "\n"
                 echo "############################################################################################################################################################"
                 echo -e "\n"
@@ -209,8 +209,8 @@ ip=`curl -s ifconfig.me`
         esac
     else
         echo -e "\n\n"
-        echo "请在弹性云服务器ECS上使用 ss5_install_config.sh 脚本!!!"
-        echo "Please use the ss5_install_config.sh script on ECS!!!"
+        echo "请在弹性云服务器ECS上使用 test_install.sh 脚本!!!"
+        echo "Please use the test_install.sh script on ECS!!!"
         echo -e "\n\n"
     fi
 else
@@ -233,8 +233,8 @@ fi
         echo -e "\n"
         echo "##############################################################################################################################"
         echo -e "\n"
-        echo "                         未安装ss5, 请重新运行 ss5_install_config.sh 脚本输入 Y 或 y 进行安装!!!"
-        echo "             ss5 is not installed, please re-run the ss5_install_config.sh script and enter Y or y to install!!!"
+        echo "                         未安装ss5, 请重新运行 test_install.sh 脚本输入 Y 或 y 进行安装!!!"
+        echo "             ss5 is not installed, please re-run the test_install.sh script and enter Y or y to install!!!"
         echo -e "\n"
         echo "##############################################################################################################################"
     fi
@@ -247,5 +247,5 @@ echo -e "\n\n"
 echo "             云服务器公网 IP (EIP)和ss5端口|CLOUD server public IP (EIP) and ss5 port  >>>>: $ip2:$port_end"
 echo -e "\n\n"
 echo "##############################################################################################################################"
-echo -e "\n\n"
+echo -e "\n\n\n"
 exit 0
