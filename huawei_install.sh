@@ -48,7 +48,7 @@ ip=`curl -s ifconfig.me`
             cd ~
             echo "安装中 ...................................................................................."
             echo "Installing ................................................................................"
-            yum -y install pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools > /dev/null
+            yum -y install pam-devel openldap-devel openssl-devel gcc pam-devel net-tools net-tools > /dev/null
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz > /dev/null
             tar -xzvf ss5-3.8.9-8.tar.gz > /dev/null 2>&1
             echo "解压........OK"
