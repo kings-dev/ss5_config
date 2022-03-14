@@ -4,7 +4,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 clear
 echo "请等待..........................................................................................................................."
 echo "Please wait......................................................................................................................"
-ping -c 2 cip.cc > /dev/null
+ping -c 2 cip.cc 2>/dev/null
 if [[ $? -eq 0 ]];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
@@ -48,10 +48,10 @@ ip=`curl -s ifconfig.me`
             cd ~
             echo "安装中 ...................................................................................."
             echo "Installing ................................................................................"
-            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools > /dev/null
-            yum clean all > /dev/null;yum-complete-transaction > /dev/null
-            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz > /dev/null
-            tar -xzvf ss5-3.8.9-8.tar.gz > /dev/null 2>&1
+            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools 2>/dev/null
+            yum clean all > /dev/null;yum-complete-transaction 2>/dev/null
+            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz 2>/dev/null
+            tar -xzvf ss5-3.8.9-8.tar.gz 2>/dev/null
             echo "解压........OK"
             echo "Unzip.......Ok"
             cd /root/ss5-3.8.9/
