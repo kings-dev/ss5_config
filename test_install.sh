@@ -4,7 +4,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 clear
 echo "请等待..........................................................................................................................."
 echo "Please wait......................................................................................................................"
-ping -c 2 cip.cc >/dev/null
+ping -c 2 cip.cc >/dev/null 2>&1
 if [[ $? -eq 0 ]];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
@@ -12,7 +12,7 @@ ip=`curl -s ifconfig.me`
     echo "        云服务器公网 IP (EIP)|CLOUD server public IP (EIP)   >>>>>:    $ip"
     echo -e "\n"
     echo "##############################################################################################################################"
-    huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
+    huawei=`curl cip.cc|grep "华为云"|awk '{print $5}'`
     if [[ -z "$huawei" ]];then
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
@@ -48,8 +48,8 @@ ip=`curl -s ifconfig.me`
             cd ~
             echo "安装中 ...................................................................................."
             echo "Installing ................................................................................"
-            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools >/dev/null
-            yum clean all >/dev/null;yum-complete-transaction >/dev/null
+            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools >/dev/null 2>&1
+            yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             echo "解压........OK"
@@ -58,7 +58,7 @@ ip=`curl -s ifconfig.me`
             ./configure >/dev/null 2>&1
             echo "配置........OK"
             echo "Configure...OK"
-            make > /dev/null 2>&1
+            make >/dev/null 2>&1
             echo "编译........OK"
             echo "Compile.....OK"
             make install >/dev/null 2>&1
@@ -247,4 +247,5 @@ echo -e "\n\n"
 echo "             云服务器公网 IP (EIP)和ss5端口|CLOUD server public IP (EIP) and ss5 port  >>>>: $ip2:$port_end"
 echo -e "\n\n"
 echo "##############################################################################################################################"
+echo -e "\n\n"
 exit 0
