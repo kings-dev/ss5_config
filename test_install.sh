@@ -9,7 +9,7 @@ if [[ $? -eq 0 ]];then
 ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     echo -e "\n"
-    echo "        华为云服务器公网 IP (EIP)|HUAWEI CLOUD server public IP (EIP)   >>>>>:    $ip"
+    echo "        云服务器公网 IP (EIP)|CLOUD server public IP (EIP)   >>>>>:    $ip"
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
@@ -48,20 +48,20 @@ ip=`curl -s ifconfig.me`
             cd ~
             echo "安装中 ...................................................................................."
             echo "Installing ................................................................................"
-            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools 2>/dev/null
-            yum clean all > /dev/null;yum-complete-transaction 2>/dev/null
-            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz 2>/dev/null
-            tar -xzvf ss5-3.8.9-8.tar.gz 2>/dev/null
+            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools >/dev/null
+            yum clean all >/dev/null;yum-complete-transaction >/dev/null
+            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
+            tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             echo "解压........OK"
             echo "Unzip.......Ok"
             cd /root/ss5-3.8.9/
-            ./configure > /dev/null 2>&1
+            ./configure >/dev/null 2>&1
             echo "配置........OK"
             echo "Configure...OK"
             make > /dev/null 2>&1
             echo "编译........OK"
             echo "Compile.....OK"
-            make install > /dev/null 2>&1
+            make install >/dev/null 2>&1
             echo "安装........OK"
             echo "Install.....OK"
             confFile=/etc/opt/ss5/ss5.conf
@@ -209,14 +209,14 @@ ip=`curl -s ifconfig.me`
         esac
     else
         echo -e "\n\n"
-        echo "请在华为云弹性云服务器ECS上使用 ss5_install_config.sh 脚本!!!"
-        echo "Please use the ss5_install_config.sh script on HUAWEI CLOUD ECS!!!"
+        echo "请在弹性云服务器ECS上使用 ss5_install_config.sh 脚本!!!"
+        echo "Please use the ss5_install_config.sh script on ECS!!!"
         echo -e "\n\n"
     fi
 else
     echo -e "\n\n"
-    echo "请在检测华为云弹性云服务器ECS IP （EIP）网络是否可用或是否绑定网卡!!!"
-    echo "Please check whether the ECS IP (EIP) network of HUAWEI CLOUD ECS is available or whether the network card is bound!!!"
+    echo "请在检测弹性云服务器ECS IP （EIP）网络是否可用或是否绑定网卡!!!"
+    echo "Please check whether the ECS IP (EIP) network of ECS is available or whether the network card is bound!!!"
     echo -e "\n\n"
 fi
 
@@ -224,8 +224,8 @@ fi
         echo -e "\n"
         echo "##############################################################################################################################"
         echo -e "\n"
-        echo "                        脚本运行成功; 请确保 Huawei Cloud 云服务器防火墙全放通 TCP 和 UDP "
-        echo "       The script runs successfully; please ensure that the firewall of Huawei Cloud cloud server allows all TCP and UDP"
+        echo "                        脚本运行成功; 请确保云服务器防火墙全放通 TCP 和 UDP "
+        echo "       The script runs successfully; please ensure that the firewall of cloud server allows all TCP and UDP"
         echo -e "\n"
         echo "##############################################################################################################################"
         echo -e "\n"
@@ -244,7 +244,7 @@ systemctl daemon-reload
 echo -e "\n"
 echo "##############################################################################################################################"
 echo -e "\n\n"
-echo "             华为云服务器公网 IP (EIP)和ss5端口|HUAWEI CLOUD server public IP (EIP) and ss5 port  >>>>: $ip2:$port_end"
+echo "             云服务器公网 IP (EIP)和ss5端口|CLOUD server public IP (EIP) and ss5 port  >>>>: $ip2:$port_end"
 echo -e "\n\n"
 echo "##############################################################################################################################"
 exit 0
