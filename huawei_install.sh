@@ -53,13 +53,13 @@ ip=`curl -s ifconfig.me`
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             cd /root/ss5-3.8.9/
-            echo "解压 ...... OK"
-            echo "unzip ...... OK"
+            echo "解压 ......... OK"
+            echo "unzip ....... OK"
             echo "配置 ......... 编译 ...... 稍等"
             echo "configure ... Compile ... Wait"
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
-            echo "安装........OK"
-            echo "Install.....OK"
+            echo "安装 ........ OK"
+            echo "Install ..... OK"
             confFile=/etc/opt/ss5/ss5.conf
             sed -i '87c auth    0.0.0.0/0       -               -' $confFile
             sed -i '203c permit -        0.0.0.0/0       -       0.0.0.0/0       -       -       -       -       -' $confFile
