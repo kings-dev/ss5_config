@@ -47,8 +47,12 @@ ip=`curl -s ifconfig.me`
         [yY][eE][sS]|[yY])
             echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待 ......."
             echo "YUM is downloading the dependency package environment for installation ....... Wait patiently ......"
-            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel >/dev/null 2>&1
-            yum update -y nss curl libcurl >/dev/null 2>&1
+            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel >/dev/null 2>&1 & yum update -y nss curl libcurl >/dev/null 2>&1 & echo -ne '#####                     (33%)\r';
+sleep 1;
+echo -ne '#############             (66%)\r';
+sleep 1;
+echo -ne '#######################   (100%)\r';
+echo -ne '\n';
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
