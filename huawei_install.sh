@@ -46,13 +46,13 @@ ip=`curl -s ifconfig.me`
         case $ok in
         [yY][eE][sS]|[yY])
             cd ~
-            echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待......."
-            echo "YUM is downloading the dependency package environment for installation ....... Wait patiently......"
+            echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待 ......."
+            echo "YUM is downloading the dependency package environment for installation ....... Wait patiently ......"
             yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel >/dev/null 2>&1
             yum update -y nss curl libcurl >/dev/null 2>&1
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
-            echo "正在下载ss5-3.8.9-8.tar.gz中请耐心等待 ......."
-            echo "Downloading ss5-3.8.9-8.tar.gz please be patient ......"
+            echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
+            echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             cd /root/ss5-3.8.9/
