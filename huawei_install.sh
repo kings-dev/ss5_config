@@ -67,7 +67,7 @@ ip=`curl -s ifconfig.me`
             chmod a+x /etc/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
             mkdir -p /var/run/ss5/
-            chmod 755 /etc/opt/ss5
+            chmod 777 /etc/opt/ss5
             chmod a+x /etc/rc.d/rc.local
             chmod +x /etc/init.d/ss5
             sed -i '2c export SS5_SOCKS_PORT=1080' /etc/init.d/ss5
