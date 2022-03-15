@@ -97,6 +97,7 @@ ip=`curl -s ifconfig.me`
             [Exit script +++++++: "q" or "Q" ]
 #^V^#
             >> " ok0
+            echo -e "\n"
             case $ok0 in
                 [yY][eE][sS]|[yY])
                     echo "已使用端口(IP:端口)Port used (IP:Port)：`netstat -anultp`"
