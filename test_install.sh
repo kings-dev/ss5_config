@@ -48,7 +48,7 @@ ip=`curl -s ifconfig.me`
             cd ~
             echo "安装中 ..................................................................................."
             echo "Installing ..............................................................................."
-            yum -y install yum-utils pam-devel openldap-devel openssl-devel gcc pam-devel wget net-tools >/dev/null 2>&1
+            yum -y install yum-utils wget net-tools gcc automake autoconf libtool make pam-devel openldap-devel openssl-devel >/dev/null 2>&1
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
