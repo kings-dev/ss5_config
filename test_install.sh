@@ -52,13 +52,13 @@ ip=`curl -s ifconfig.me`
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
-            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1 | xargs -L 9 | xargs -I@ echo -ne "==..WGET..==>>\n" 
+            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             lj=`pwd`
             tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "==..TAR -XZVF *.GZ..==>>\n"
             cd /$lj/ss5-3.8.9/
-            ./configure | xargs -L 15 | xargs -I@ echo -ne "==..CONFIGURE..==>>\n";make >/dev/null;make install >/dev/null 2>&1
-            echo "         编译 安装 ........ OK"
-            echo "         Make Install ..... OK"
+            ./configure >/dev/null 2>&1;make >/dev/null;make install >/dev/null 2>&1
+            echo "===配置 编译  安装 ........ OK"
+            echo "===Configure  Make    Install ..... OK"
             chmod 777 /etc/rc.d/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
             confFile=/etc/opt/ss5/ss5.conf
