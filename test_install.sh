@@ -49,7 +49,7 @@ ip=`curl -s ifconfig.me`
             yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 19 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
             yum update -y nss curl libcurl | xargs -L 8 | xargs -I@ echo -ne "..Update..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>[  OK  ]\n"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
-            echo "正在下载     'ss5-3.8.9-8.tar.gz' .... 耐心等待 .......... [  OK  ]"
+            echo "正在下载    'ss5-3.8.9-8.tar.gz' .... 耐心等待 ............ [  OK  ]"
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ..... [  OK  ]"
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             lj=`pwd`
