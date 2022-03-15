@@ -52,7 +52,7 @@ ip=`curl -s ifconfig.me`
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
-            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz | xargs -L 4 | xargs -I@ echo -ne "==..WGET..==>>\n" 
+            wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz | xargs -L 9 | xargs -I@ echo -ne "==..WGET..==>>\n" 
             lj=`pwd`
             tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "==..TAR -XZVF *.GZ..==>>\n"
             cd /$lj/ss5-3.8.9/
