@@ -55,7 +55,7 @@ ip=`curl -s ifconfig.me`
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             lj=`pwd`
             tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
-            cd /$lj/ss5-3.8.9/
+            cd $l/ss5-3.8.9/
             echo "解压 ........ OK"
             echo "unzip ....... OK"
             echo "配置 ........ 编译 ...... 稍等 ..."
@@ -200,7 +200,7 @@ ip=`curl -s ifconfig.me`
             rm -rf /usr/lib/ss5
             rm -f /usr/sbin/ss5
             rm -rf /usr/share/doc/ss5
-            rm -rf /$lj/ss5-3.8.9
+            rm -rf $ljss5-3.8.9
             rm -f /etc/sysconfig/ss5
             rm -f /etc/rc.d/init.d/ss5
             rm -f /etc/pam.d/ss5
