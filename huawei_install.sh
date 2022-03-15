@@ -45,20 +45,20 @@ ip=`curl -s ifconfig.me`
         >> " ok
         case $ok in
         [yY][eE][sS]|[yY])
-            echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待 ......."
-            echo "YUM is downloading the dependency package environment for installation ....... Wait patiently ......"
-            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 19 | xargs -I@ echo -ne "==..[YUM]..==>\n"
-            yum update -y nss curl libcurl | xargs -L 8 | xargs -I@ echo -ne "==..UPDATE..==>>\n"
+            echo "Yum 下载依赖包环境进行安装中 ....... 耐心等待 ......."
+            echo "Yum is downloading the dependency package environment for installation ....... Wait patiently ......"
+            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 19 | xargs -I@ echo -ne "==..Yum..==>\n"
+            yum update -y nss curl libcurl | xargs -L 8 | xargs -I@ echo -ne "==..Update..==>>\n"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             lj=`pwd`
-            tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "==..TAR -XZVF *.GZ..==>>\n"
+            tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "==..Tar -xzvf *.gz..==>>\n"
             cd /$lj/ss5-3.8.9/
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
-            echo "===配置 编译  安装 ........ OK"
-            echo "===Configure  Make    Install ..... OK"
+            echo "==..配置 ........ 编译 ....... 安装 ........ OK"
+            echo "==..Configure ... Make ....... Install ..... OK"
             chmod 777 /etc/rc.d/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
             confFile=/etc/opt/ss5/ss5.conf
