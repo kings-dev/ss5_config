@@ -45,7 +45,6 @@ ip=`curl -s ifconfig.me`
         >> " ok
         case $ok in
         [yY][eE][sS]|[yY])
-            cd ~
             echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待 ......."
             echo "YUM is downloading the dependency package environment for installation ....... Wait patiently ......"
             yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel >/dev/null 2>&1
