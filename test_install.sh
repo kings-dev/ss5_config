@@ -20,26 +20,26 @@ ip=`curl -s ifconfig.me`
         Now build the ss5 application service to download and install the Centos 7.6 environment dependency package and source package,
         please enter (English prompt symbol) and press Enter:
 #
-        [安装编译: "Y" 或 "y" ]
-        [Install build: "Y" or "y" ]
+        [安装编译+++++++++++: "Y" 或 "y" ]
+        [Install build ++++: "Y" or "y" ]
 #
-        [修改端口: "n" 或 "N" ]
-        [Modify port: "n" or "N" ]
+        [修改端口+++++++++++: "n" 或 "N" ]
+        [Modify port ++++++: "n" or "N" ]
 #
-        [退出脚本: "q" 或 "Q" ]
-        [Exit script: "q" or "Q" ]
+        [退出脚本+++++++++++: "q" 或 "Q" ]
+        [Exit script ++++++: "q" or "Q" ]
 #
-        [关闭进程: "s" 或 "S" ]
-        [close process: "s" or "S" ]
+        [关闭进程+++++++++++: "s" 或 "S" ]
+        [close process ++++: "s" or "S" ]
 #
-        [启动进程: "r" 或 "R" ]
-        [start process: "r" or "R" ]
+        [启动进程+++++++++++: "r" 或 "R" ]
+        [start process ++++: "r" or "R" ]
 #
-        [进程状态: "z" 或 "Z" ]
-        [process status: "z" or "Z" ]
+        [进程状态+++++++++++: "z" 或 "Z" ]
+        [process status +++: "z" or "Z" ]
 #
-        [卸载程序: "u" 或 "U" ]
-        [Uninstaller: "u" or "U" ]
+        [卸载程序+++++++++++: "u" 或 "U" ]
+        [Uninstaller ++++++: "u" or "U" ]
 #
         >> " ok
         case $ok in
@@ -85,14 +85,14 @@ ip=`curl -s ifconfig.me`
             The default port is: 1080. If you need to modify the SS5 port (1-65535), 
             please enter (English prompt symbol) and press Enter:
 #
-            [定义端口: "Y" 或 "y" ]
-            [Define port: "Y" or "y" ]
+            [定义端口+++++++++++: "y" 或 "Y" ]
+            [Define port ++++++: "y" or "Y" ]
 #
-            [不改端口: "n" 或 "N" ]
+            [不改端口+++++++++++: "n" 或 "N" ]
             [Do not change port: "n" or "N" ]
 #
-            [退出脚本: "q" 或 "Q" ]
-            [Exit script: "q" or "Q" ]
+            [退出脚本+++++++++++: "q" 或 "Q" ]
+            [Exit script ++++++: "q" or "Q" ]
 #
             >> " ok0
             case $ok0 in
