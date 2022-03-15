@@ -47,8 +47,8 @@ ip=`curl -s ifconfig.me`
         [yY][eE][sS]|[yY])
             echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待 ......."
             echo "YUM is downloading the dependency package environment for installation ....... Wait patiently ......"
-            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 3 | xargs -I@ echo -ne "==....==>\n" 
-            yum update -y nss curl libcurl | xargs -L 3 | xargs -I@ echo -ne "==...=>>\n" 
+            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 8 | xargs -I@ echo -ne "==..[YUM]..==>\n" 
+            yum update -y nss curl libcurl | xargs -L 8 | xargs -I@ echo -ne "==..UPDATE..=>>" 
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
@@ -60,7 +60,7 @@ ip=`curl -s ifconfig.me`
             echo "unzip ....... OK"
             echo "配置 ........ 编译 ...... 稍等 ..."
             echo "configure ... Compile ... Wait ..."
-            ./configure | xargs -L 3 | xargs -I@ echo -ne "==...=>>\n" ;make | xargs -L 3 | xargs -I@ echo -ne "==...=>>\n" ;make install | xargs -L 3 | xargs -I@ echo -ne "==...=>>\n" 
+            ./configure | xargs -L 4 | xargs -I@ echo -ne "==..CONFIGURE..=>>\n" ;make | xargs -L 5 | xargs -I@ echo -ne "==..MAKE..=>>\n" ;make install | xargs -L 3 | xargs -I@ echo -ne "==..MAKE INSTALL..=>>\n" 
             echo "安装 ........ OK"
             echo "Install ..... OK"
             chmod 777 /etc/rc.d/init.d/ss5
