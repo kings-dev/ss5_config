@@ -45,7 +45,6 @@ ip=`curl -s ifconfig.me`
         >> " ok
         case $ok in
         [yY][eE][sS]|[yY])
-            cd ~
             echo "YUM 下载依赖包环境进行安装中 ....... 耐心等待 ......."
             echo "YUM is downloading the dependency package environment for installation ....... Wait patiently ......"
             yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel >/dev/null 2>&1
@@ -54,8 +53,9 @@ ip=`curl -s ifconfig.me`
             echo "正在下载 'ss5-3.8.9-8.tar.gz' ..... 耐心等待 ......."
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ......"
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
+            lj=`pwd`
             tar -xzvf ss5-3.8.9-8.tar.gz >/dev/null 2>&1
-            cd /root/ss5-3.8.9/
+            cd /$lj/ss5-3.8.9/
             echo "解压 ........ OK"
             echo "unzip ....... OK"
             echo "配置 ........ 编译 ...... 稍等 ..."
@@ -200,7 +200,7 @@ ip=`curl -s ifconfig.me`
             rm -rf /usr/lib/ss5
             rm -f /usr/sbin/ss5
             rm -rf /usr/share/doc/ss5
-            rm -rf /root/ss5-3.8.9
+            rm -rf /$lj/ss5-3.8.9
             rm -f /etc/sysconfig/ss5
             rm -f /etc/rc.d/init.d/ss5
             rm -f /etc/pam.d/ss5
