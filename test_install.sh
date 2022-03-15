@@ -57,8 +57,8 @@ ip=`curl -s ifconfig.me`
             tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "==..TAR -XZVF *.GZ..==>>\n"
             cd /$lj/ss5-3.8.9/
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
-            echo "===配置 编译  安装 ........ OK"
-            echo "===Configure  Make    Install ..... OK"
+            echo "==..配置 ........ 编译 ........ 安装 ........ OK"
+            echo "==..Configure ... Make ....... Install ..... OK"
             chmod 777 /etc/rc.d/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
             confFile=/etc/opt/ss5/ss5.conf
