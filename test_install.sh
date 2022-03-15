@@ -21,25 +21,25 @@ ip=`curl -s ifconfig.me`
         please enter (English prompt symbol) and press Enter:
 #
         [安装编译+++++++++++: "Y" 或 "y" ]
-        [Install build ++++: "Y" or "y" ]
+        [Install build +++++: "Y" or "y" ]
 #
         [修改端口+++++++++++: "n" 或 "N" ]
-        [Modify port ++++++: "n" or "N" ]
+        [Modify port +++++++: "n" or "N" ]
 #
         [退出脚本+++++++++++: "q" 或 "Q" ]
-        [Exit script ++++++: "q" or "Q" ]
+        [Exit script +++++++: "q" or "Q" ]
 #
         [关闭进程+++++++++++: "s" 或 "S" ]
-        [close process ++++: "s" or "S" ]
+        [close process +++++: "s" or "S" ]
 #
         [启动进程+++++++++++: "r" 或 "R" ]
-        [start process ++++: "r" or "R" ]
+        [start process +++++: "r" or "R" ]
 #
         [进程状态+++++++++++: "z" 或 "Z" ]
-        [process status +++: "z" or "Z" ]
+        [process status ++++: "z" or "Z" ]
 #
         [卸载程序+++++++++++: "u" 或 "U" ]
-        [Uninstaller ++++++: "u" or "U" ]
+        [Uninstaller +++++++: "u" or "U" ]
 #
         >> " ok
         case $ok in
@@ -49,14 +49,14 @@ ip=`curl -s ifconfig.me`
             yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 19 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
             yum update -y nss curl libcurl | xargs -L 8 | xargs -I@ echo -ne "..Update..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>[  OK  ]\n"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
-            echo "正在下载     'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]"
+            echo "正在下载     'ss5-3.8.9-8.tar.gz' .... 耐心等待 .......... [  OK  ]"
             echo "Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ..... [  OK  ]"
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             lj=`pwd`
             tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "..Tar -xzvf *.gz..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n"
             cd /$lj/ss5-3.8.9/
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
-            echo "===.... 配置 ........ 编译 ....... 安装 ................... [  OK  ]"
+            echo "===.... 配置 ........ 编译 ....... 安装 .................. [  OK  ]"
             echo "===.... Configure ... Make ....... Install ............... [  OK  ]"
             chmod 777 /etc/rc.d/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
@@ -86,13 +86,13 @@ ip=`curl -s ifconfig.me`
             please enter (English prompt symbol) and press Enter:
 #
             [定义端口+++++++++++: "y" 或 "Y" ]
-            [Define port ++++++: "y" or "Y" ]
+            [Define port +++++++: "y" or "Y" ]
 #
             [不改端口+++++++++++: "n" 或 "N" ]
-            [Do not change port: "n" or "N" ]
+            [Do not change port : "n" or "N" ]
 #
             [退出脚本+++++++++++: "q" 或 "Q" ]
-            [Exit script ++++++: "q" or "Q" ]
+            [Exit script +++++++: "q" or "Q" ]
 #
             >> " ok0
             case $ok0 in
