@@ -60,12 +60,13 @@ ip=`curl -s ifconfig.me`
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
             echo "安装 ........ OK"
             echo "Install ..... OK"
+            chmod 777 /etc/rc.d/init.d/ss5
+            chmod a+x /etc/rc.d/init.d/ss5
             confFile=/etc/opt/ss5/ss5.conf
             sed -i '87c auth    0.0.0.0/0       -               -' $confFile
             sed -i '203c permit -        0.0.0.0/0       -       0.0.0.0/0       -       -       -       -       -' $confFile
             sed -i '2c SS5_OPTS=" -u root -b 0.0.0.0:1080"' /etc/sysconfig/ss5
             chmod a+x /etc/init.d/ss5
-            chmod a+x /etc/rc.d/init.d/ss5
             mkdir -p /var/run/ss5/
             chmod 755 /etc/opt/ss5
             chmod a+x /etc/rc.d/rc.local
