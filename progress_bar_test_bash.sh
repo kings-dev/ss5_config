@@ -1,4 +1,3 @@
-progress bar
 #!/bin/bash
 #!/bin/sh
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
