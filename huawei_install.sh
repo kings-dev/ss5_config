@@ -59,7 +59,7 @@ ip=`curl -s ifconfig.me`
             cd /$lj/ss5-3.8.9/
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
             echo "===.... 配置 ........ 编译 ....... 安装 .................. [  OK  ]"
-            echo -e"===.... Configure ... Make ....... Install ............... [  OK  ]\n"
+            echo -e "===.... Configure ... Make ....... Install ............... [  OK  ]\n"
             chmod 777 /etc/rc.d/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
             confFile=/etc/opt/ss5/ss5.conf
