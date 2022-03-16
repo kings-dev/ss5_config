@@ -49,10 +49,15 @@ Other test bash ECS or Centos 7:
 3.code:
 
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
+
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh
+
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh
+
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'n\ny\n8888'|bash test_install.sh
------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 wget -q -N --no-check-certificate https://gh.api.99988866.xyz/https://raw.githubusercontent.com/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
 
 ##############################################################################################################################################################
