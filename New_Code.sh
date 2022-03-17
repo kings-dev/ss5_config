@@ -6,6 +6,7 @@
 # Please contact opensource@wandisco.com if you have any problems with this
 # script.
 
+#set -e !=0
 set -e
 
 SVN_VERSION=1.14.1-1
