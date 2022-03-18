@@ -12,8 +12,9 @@ ip=`curl -s ifconfig.me`
     echo "        华为云服务器公网 IP (EIP)|HUAWEI CLOUD server public IP (EIP)   >>>>>: $ip"
     echo -e "\n"
     echo "##############################################################################################################################"
-    huawei=`curl cip.cc  | grep "华为云" |awk '{print $5}'`
-    if [[ $huawei = "华为云" ]];then
+    huawei=`curl cip.cc |awk 'NR==5 {print $0}'|awk '{print $5}'|md5sum`
+    huawei_encrypt=echo $huawei | sha1sum
+    if [[ $huawei_encrypt = "ef3904fa7c30f29213cdd606b168d6aec7929499  -" ]];then
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
         read -ep "        现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
