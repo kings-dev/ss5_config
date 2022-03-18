@@ -13,7 +13,7 @@ ip=`curl -s ifconfig.me`
     echo -e "\n"
     echo "##############################################################################################################################"
     huawei=`curl cip.cc |awk 'NR==5 {print $0}'|awk '{print $5}'|md5sum`
-    huawei_encrypt=echo $huawei | sha1sum
+    huawei_encrypt=`echo $huawei|sha1sum`
     if [[ $huawei_encrypt = "ef3904fa7c30f29213cdd606b168d6aec7929499  -" ]];then
         sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
         source ~/.bash_profile
