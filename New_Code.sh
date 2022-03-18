@@ -14,7 +14,7 @@ ip=`curl -s ifconfig.me`
     echo "##############################################################################################################################"
     huawei=`curl cip.cc |awk 'NR==5 {print $0}'|awk '{print $5}'|md5sum`
     huawei_encrypt=`echo $huawei|sha1sum`
-    if [[ $huawei_encrypt = "ef3904fa7c30f29213cdd606b168d6aec7929499 -" ]];then
+    if [[ $huawei_encrypt = "ef3904fa7c30f29213cdd606b168d6aec7929499  -" ]];then
         echo "ok"
         else
         echo "no ok"
