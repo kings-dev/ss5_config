@@ -18,4 +18,7 @@ ip=`curl -s ifconfig.me`
         echo "ok"
         else
         echo "no ok"
-    if
+    fi
+    else
+    echo "ip no ok"
+    fi
