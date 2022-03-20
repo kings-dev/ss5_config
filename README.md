@@ -60,7 +60,7 @@ x5=`echo "$x_1"|awk 'NR==1{print}'`
 x6=`echo "$x_1"|awk 'NR==2{print}'`
 fip=`echo "firewall-cmd --permanent --add-source="`
 ping -c 2 raw.githubusercontent.com|grep "127.0.0.1" > /dev/null
-if [ $? -eq 0 ];then
+if [ $? -ne 0 ];then
     curl https://ipaddress.com/website/raw.githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.githubusercontent.com" }' >> /etc/hosts;awk -e ' !x[$0]++' /etc/hosts|sort -ru /etc/hosts -o /etc/hosts
     curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.fastgit.org" }' >> /etc/hosts;awk -e ' !x[$0]++' /etc/hosts|sort -ru /etc/hosts -o /etc/hosts
 /etc/init.d/network restart
