@@ -92,7 +92,7 @@ echo "Yum install Or Update >>>: OK."
 echo -e "\n\n\n"
 exit 0
 EOF
-            bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel  | xargs -L 21 | xargs -I@ echo -ne "\r\n...Yum Install...====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
+            bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel  | xargs -L 21 | xargs -I@ echo -ne "\r\n....Yum Install...====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
             bash par.sh & yum update -y nss curl libcurl  | xargs -L 12 | xargs -I@ echo -ne "\r\n....Yum Update....====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo -e "\r\n正在下载    'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]\n\r"
