@@ -49,7 +49,8 @@ wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/ma
 cat << "EOF" > ./huawei_copy_bash.sh
 #!/bin/bash
 #!/bin/sh
-yum -y install curl wget libssl-dev openssl | xargs -L 19 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
+echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  1%  ]\n"
+yum -y install curl wget libssl-dev openssl | xargs -L 11 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
 x_0=`curl https://ipaddress.com/website/raw.githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
 x1=`echo "$x_0"|awk 'NR==1{print}'`
 x2=`echo "$x_0"|awk 'NR==2{print}'`
@@ -61,7 +62,8 @@ x6=`echo "$x_1"|awk 'NR==2{print}'`
 fip=`echo "firewall-cmd --permanent --add-source="`
 ping -c 2 raw.githubusercontent.com|grep "127.0.0.1";ping1=`echo $?`
 ping -c 2 raw.githubusercontent.com;ping2=`echo $?`
-if [ $ping1 -eq 0 ] || [ $ping2 -eq 1 ];then
+ping -c 2 raw.fastgit.org;ping3=`echo $?`
+if [ $ping1 -eq 0 ] || [ $ping2 -eq 1 ] || [ $ping3 -eq 0 ];then
     curl https://ipaddress.com/website/raw.githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.githubusercontent.com" }' >> /etc/hosts;awk -e ' !x[$0]++' /etc/hosts|sort -ru /etc/hosts -o /etc/hosts
     curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.fastgit.org" }' >> /etc/hosts;awk -e ' !x[$0]++' /etc/hosts|sort -ru /etc/hosts -o /etc/hosts
 /etc/init.d/network restart
