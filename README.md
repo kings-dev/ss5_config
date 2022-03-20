@@ -50,7 +50,7 @@ cat << "EOF" > ./huawei_copy_bash.sh
 #!/bin/bash
 #!/bin/sh
 yum -y install curl wget libssl-dev openssl > /dev/null
-x_0=`curl https://ipaddress.com/website/githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
+x_0=`curl https://ipaddress.com/website/raw.githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
 x1=`echo "$x_0"|awk 'NR==1{print}'`
 x2=`echo "$x_0"|awk 'NR==2{print}'`
 x3=`echo "$x_0"|awk 'NR==3{print}'`
