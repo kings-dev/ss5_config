@@ -43,6 +43,8 @@ wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/ma
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'n\ny\n8888'|bash test_install.sh
 ```  
 ---  
+## Check DNS Deconfiguration: huawei_copy_bash.sh
+### Copy the code below:  
 ```Bash
 cat << "EOF" > ./huawei_copy_bash.sh
 #!/bin/bash
