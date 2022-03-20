@@ -59,7 +59,7 @@ until [ ! $a -lt $row1 ]
 do
     echo $b
     b=`expr $a + 1`
-    x$b=`echo "$x_0"|awk 'NR==1{print}'`
+    x$b=`echo "$x_0"|awk 'NR==$b{print}'`
 done
 #x1=`echo "$x_0"|awk 'NR==1{print}'`
 #x2=`echo "$x_0"|awk 'NR==2{print}'`
