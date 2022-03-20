@@ -56,7 +56,6 @@ x2=`echo "$x_0"|awk 'NR==2{print}'`
 x3=`echo "$x_0"|awk 'NR==3{print}'`
 x4=`echo "$x_0"|awk 'NR==4{print}'`
 x_1=`curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
-row2=`echo "$x_1"|wc -l`
 x5=`echo "$x_1"|awk 'NR==1{print}'`
 x6=`echo "$x_1"|awk 'NR==2{print}'`
 fip=`echo "firewall-cmd --permanent --add-source="`
