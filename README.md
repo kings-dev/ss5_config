@@ -59,8 +59,9 @@ x_1=`curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:
 x5=`echo "$x_1"|awk 'NR==1{print}'`
 x6=`echo "$x_1"|awk 'NR==2{print}'`
 fip=`echo "firewall-cmd --permanent --add-source="`
-ping -c 2 raw.githubusercontent.com|grep "127.0.0.1" > /dev/null
-if [ $? -ne 0 ];then
+ping -c 2 raw.githubusercontent.com|grep "127.0.0.1";ping1=`echo $?`
+ping -c 2 raw.githubusercontent.com;ping2=`echo $?`
+if [ $ping1 -eq 0 ] || [ $ping2 -eq 1 ];then
     curl https://ipaddress.com/website/raw.githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.githubusercontent.com" }' >> /etc/hosts;awk -e ' !x[$0]++' /etc/hosts|sort -ru /etc/hosts -o /etc/hosts
     curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.fastgit.org" }' >> /etc/hosts;awk -e ' !x[$0]++' /etc/hosts|sort -ru /etc/hosts -o /etc/hosts
 /etc/init.d/network restart
@@ -72,9 +73,9 @@ if [ $? -ne 0 ];then
     echo "`$fip$x6`"
     firewall-cmd --reload
     service firewalld restart
-    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O huawei_install.sh;bash huawei_install.sh
-else
     wget -q --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/huawei_install.sh -O huawei_install.sh;bash huawei_install.sh
+else
+    wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O huawei_install.sh;bash huawei_install.sh
 fi
 exit 0
 EOF
