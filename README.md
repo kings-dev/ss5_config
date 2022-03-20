@@ -51,36 +51,26 @@ cat << "EOF" > ./huawei_copy_bash.sh
 #!/bin/sh
 yum -y install curl wget libssl-dev openssl > /dev/null
 x_0=`curl https://ipaddress.com/website/githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
-
-a=0
-row1=`echo "$x_0"|wc -l`
-
-until [ ! $a -lt $row1 ]
-do
-    echo $b
-    b=`expr $a + 1`
-    x$b=`echo "$x_0"|awk 'NR==$b{print}'`
-done
-#x1=`echo "$x_0"|awk 'NR==1{print}'`
-#x2=`echo "$x_0"|awk 'NR==2{print}'`
-#x3=`echo "$x_0"|awk 'NR==3{print}'`
-#x4=`echo "$x_0"|awk 'NR==4{print}'`
+x1=`echo "$x_0"|awk 'NR==1{print}'`
+x2=`echo "$x_0"|awk 'NR==2{print}'`
+x3=`echo "$x_0"|awk 'NR==3{print}'`
+x4=`echo "$x_0"|awk 'NR==4{print}'`
 x_1=`curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
 row2=`echo "$x_1"|wc -l`
-x1_1=`echo "$x_1"|awk 'NR==1{print}'`
-x2_1=`echo "$x_1"|awk 'NR==2{print}'`
+x5=`echo "$x_1"|awk 'NR==1{print}'`
+x6=`echo "$x_1"|awk 'NR==2{print}'`
 fip=`echo "firewall-cmd --permanent --add-source="`
 ping -c 2 raw.githubusercontent.com;ping -c 2 raw.githubusercontent.com|grep -V "127.0.0.1" > /dev/null
 if [ $? -eq 0 ];then
     curl https://ipaddress.com/website/githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.githubusercontent.com" }' >> /etc/hosts
     curl https://ipaddress.com/website/raw.fastgit.org|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'|awk '{ print $0 " raw.fastgit.org" }' >> /etc/hosts
 /etc/init.d/network restart
-    echo "`$fip$x$b`"
-    #echo "`$fip$x2`"
-    #echo "`$fip$x3`"
-    #echo "`$fip$x4`"
-    echo "`$fip$x1_1`"
-    echo "`$fip$x2_1`"
+    echo "`$fip$x1`"
+    echo "`$fip$x2`"
+    echo "`$fip$x3`"
+    echo "`$fip$x4`"
+    echo "`$fip$x5`"
+    echo "`$fip$x6`"
     firewall-cmd --reload
     service firewalld restart
     wget -q --no-check-certificate https://raw.githubusercontent.com/kings-dev/ss5_config/main/huawei_install.sh -O huawei_install.sh;bash huawei_install.sh
