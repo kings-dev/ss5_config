@@ -80,7 +80,7 @@ do
     sleep 0.1 && echo -ne "\r                 010%  .... "&&
     sleep 0.1 && echo -ne "\r                 040%  ... "&&
     sleep 0.1 && echo -ne "\r                 060%  .. "&&   
-    sleep 0.1 && echo -ne "\r                 096%  ......... ";
+    sleep 0.1 && echo -ne "\r                 100%  .... .... ... OK";
     ps|grep "yum" >/dev/null
     if [ $? -eq 1 ];then
         break
@@ -88,7 +88,7 @@ do
     fi
 done
 echo -e "\n"
-echo "Yum install OK."
+echo "Yum install Or Update >>>: OK."
 echo -e "\n\n\n"
 exit 0
 EOF
