@@ -78,5 +78,6 @@ else
 fi
 exit 0
 EOF
-bash huawei_copy_bash.sh
+bash huawei_copy_bash.sh  
+  
 ```  
