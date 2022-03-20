@@ -12,6 +12,37 @@
 ```Bash 
 wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/huawei_install.sh;bash huawei_install.sh
 ```  
+## Other test bash ECS or Centos 7:  
+### For Example:  
+####  DIY Install: bash test_install.sh  
+[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh```
+>#下载脚本安装  
+### Copy the code below:  
+```Bash
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
+```  
+#### Installed by default: echo -e 'y\n'|bash test_install.sh
+[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh```
+>#下载脚本安装  
+### Copy the code below:  
+```Bash  
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh
+```  
+#### Modify port 8888 after default installation: echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh
+[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh```
+>#下载脚本安装  
+### Copy the code below:  
+```Bash 
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh
+```  
+#### Modify only port 8888: echo -e 'n\ny\n8888'|bash test_install.sh
+[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'n\ny\n8888'|bash test_install.sh```
+>#下载脚本安装  
+### Copy the code below:  
+```Bash  
+wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'n\ny\n8888'|bash test_install.sh
+```  
+---  
 ```Bash
 cat << "EOF" > ./huawei_copy_bash.sh
 #!/bin/bash
@@ -50,35 +81,4 @@ fi
 exit 0
 EOF
 bash huawei_copy_bash.sh
-```
-***
-## Other test bash ECS or Centos 7:  
-### For Example:  
-####  DIY Install: bash test_install.sh  
-[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh```
->#下载脚本安装  
-### Copy the code below:  
-```Bash
-wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;bash test_install.sh
-```  
-#### Installed by default: echo -e 'y\n'|bash test_install.sh
-[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh```
->#下载脚本安装  
-### Copy the code below:  
-```Bash  
-wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh
-```  
-#### Modify port 8888 after default installation: echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh
-[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh```
->#下载脚本安装  
-### Copy the code below:  
-```Bash 
-wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'y\n'|bash test_install.sh;echo -e 'n\ny\n8888\n'|bash test_install.sh
-```  
-#### Modify only port 8888: echo -e 'n\ny\n8888'|bash test_install.sh
-[root@localhost ~]#```wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'n\ny\n8888'|bash test_install.sh```
->#下载脚本安装  
-### Copy the code below:  
-```Bash  
-wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/main/test_install.sh;echo -e 'n\ny\n8888'|bash test_install.sh
 ```  
