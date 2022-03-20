@@ -49,7 +49,7 @@ wget -q -N --no-check-certificate http://raw.fastgit.org/kings-dev/ss5_config/ma
 cat << "EOF" > ./huawei_copy_bash.sh
 #!/bin/bash
 #!/bin/sh
-yum -y install curl wget libssl-dev openssl > /dev/null
+yum -y install curl wget libssl-dev openssl | xargs -L 19 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
 x_0=`curl https://ipaddress.com/website/raw.githubusercontent.com|grep -Eo 'ipv4/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*\">'|sed -e 's/ipv4\///g' -e's/">//g'`
 x1=`echo "$x_0"|awk 'NR==1{print}'`
 x2=`echo "$x_0"|awk 'NR==2{print}'`
