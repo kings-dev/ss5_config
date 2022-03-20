@@ -47,7 +47,35 @@ ip=`curl -s ifconfig.me`
         [yY][eE][sS]|[yY])
             echo "Yum 下载依赖包环境进行安装中 ................................................. 耐心等待 ..................... [  OK  ]"
             echo -e "Yum is downloading the dependency package environment for installation ....... Wait patiently ............... [  OK  ]\n"
-            yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 19 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
+            cat << "EOF" > ./par.sh
+#!/bin/bash
+echo -e "\n\n"
+ps|grep "yum"
+while [ $? -eq 0 ];
+do
+    sleep 0.25 && echo -ne "\r" && sleep 0.25 && echo -ne "\r>" && sleep 0.25 && echo -ne "\r>>" && sleep 0.25 && echo -ne "\r>>>" &&  sleep 0.25 && echo -ne "\r>>>>" && sleep 0.25 && echo -ne "\r>>>>>" && sleep 0.25 && echo -ne "\r>>>>>>" && sleep 0.25 && echo -ne "\r>>>>>>>" && sleep 0.25 && echo -ne "\r>>>>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>>>>>>";
+    sleep 0.25 && echo -ne "\r>>>>>>>>>>>";
+    sleep 0.25 && echo -ne "\rActivity: \\" && sleep 0.25 && echo -ne "\rActivity: |" && sleep 0.25 && echo -ne "\rActivity: /" && sleep 0.25 && echo -ne "\rActivity: -";
+    sleep 0.25 && echo -ne "\r:Active:" && sleep .25 && echo -ne "\r:aCtive:" && sleep .25 && echo -ne "\r:acTive:" && sleep .25 && echo -ne "\r:actIve:" && sleep .25 && echo -ne "\r:actiVe:" && sleep .25 && echo -ne "\r:activE:";
+    x=`ps|grep "yum";echo $?`
+    if [ $x -eq 1 ];then
+        break
+        exit
+    fi
+done
+echo -e "\n"
+echo "Yum install OK."
+echo -e "\n\n\n"
+exit 0
+EOF
+bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 19 | xargs -I@ echo -ne "..Yum..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>>>>[  OK  ]\n"
             yum update -y nss curl libcurl | xargs -L 8 | xargs -I@ echo -ne "..Update..====>==>==>==>==>==>==>==>==>==>==>==>==>==>>>>>>[  OK  ]\n"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
             echo "正在下载    'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]"
