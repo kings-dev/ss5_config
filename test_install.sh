@@ -76,7 +76,9 @@ do
     sleep 0.1 && echo -ne "\r                 059%" &&
     sleep 0.1 && echo -ne "\r                 078%" &&
     sleep 0.1 && echo -ne "\r                 100%" &&
-    sleep 0.1 && echo -ne "\r                 000%" ;
+    sleep 0.1 && echo -ne "\r                 000%" &&
+    sleep 0.1 && echo -ne "\r                 010%" &&
+    sleep 0.1 && echo -ne "\r                 090%";
     ps|grep "yum" >/dev/null
     if [ $? -eq 1 ];then
         break
@@ -88,18 +90,18 @@ echo "Yum install OK."
 echo -e "\n\n\n"
 exit 0
 EOF
-            bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel  | xargs -L 21 | xargs -I@ echo -ne "\r\n                   ..Yum Install..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
-            bash par.sh & yum update -y nss curl libcurl  | xargs -L 12 | xargs -I@ echo -ne "\r\n                   ..Yum Update..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
+            bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel  | xargs -L 21 | xargs -I@ echo -ne "\r\n..Yum Install..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
+            bash par.sh & yum update -y nss curl libcurl  | xargs -L 12 | xargs -I@ echo -ne "\r\n..Yum Update..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
-            echo -e "\r\n                   正在下载    'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]"
-            echo -e "\r\n                   Downloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ..... [  OK  ]"
+            echo -e "\r\n正在下载    'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]\n\r"
+            echo -e "\r\nDownloading 'ss5-3.8.9-8.tar.gz' .... Wait patiently ..... [  OK  ]\n\r"
             wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
             lj=`pwd`
-            tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "\r\n                   ..Tar -xzvf *.gz..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
+            tar -xzvf ss5-3.8.9-8.tar.gz | xargs -L 13 | xargs -I@ echo -ne "\r\n..Tar -xzvf *.gz..====>==>==>==>==>==>==>==>==>==>==>>>>>>>[  OK  ]\n\r"
             cd /$lj/ss5-3.8.9/
             ./configure >/dev/null 2>&1;make >/dev/null 2>&1;make install >/dev/null 2>&1
-            echo -e "\r\n                   ===.... 配置 ........ 编译 ....... 安装 .................. [  OK  ]\n\r"
-            echo -e "\r\n                   ===.... Configure ... Make ....... Install ............... [  OK  ]\n\r"
+            echo -e "\r\n===.... 配置 ........ 编译 ....... 安装 .................. [  OK  ]\n\r"
+            echo -e "\r\n===.... Configure ... Make ....... Install ............... [  OK  ]\n\r"
             chmod 777 /etc/rc.d/init.d/ss5
             chmod a+x /etc/rc.d/init.d/ss5
             confFile=/etc/opt/ss5/ss5.conf
