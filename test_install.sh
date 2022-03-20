@@ -53,36 +53,24 @@ echo -e "\n\n"
 ps|grep "yum"
 while [ $? -eq 0 ];
 do
-    sleep 0.1 && echo -ne "\r" && 
-    sleep 0.1 && echo -ne "\r>" && 
-    sleep 0.1 && echo -ne "\r>>" && 
-    sleep 0.1 && echo -ne "\r>>>" &&  
-    sleep 0.1 && echo -ne "\r>>>>" && 
-    sleep 0.1 && echo -ne "\r>>>>>" && 
-    sleep 0.1 && echo -ne "\r>>>>>>" &&
-    sleep 0.1 && echo -ne "\r>>>>>>>" &&
-    sleep 0.1 && echo -ne "\r>>>>>>>>" &&
-    sleep 0.1 && echo -ne "\r>>>>>>>>>" &&
-    sleep 0.1 && echo -ne "\r>>>>>>>>>>" &&
-    sleep 0.1 && echo -ne "\r>>>>>>>>>>>"; 
-    sleep 0.1 && echo -ne "\r>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>>>>>>";
-    sleep 0.1 && echo -ne "\r>>>>>>>>>>>";
-    sleep 0.1 && echo -ne "\r               Activity: \\" && 
-    sleep 0.1 && echo -ne "\r               Activity: |" && 
-    sleep 0.1 && echo -ne "\r               Activity: /" &&
-    sleep 0.1 && echo -ne "\r               Activity: -";
-    sleep 0.1 && echo -ne "\r               :Active:" && 
-    sleep 0.1 && echo -ne "\r               :aCtive:" && 
-    sleep 0.1 && echo -ne "\r               :acTive:" && 
-    sleep 0.1 && echo -ne "\r               :actIve:" && 
-    sleep 0.1 && echo -ne "\r               :actiVe:" && 
-    sleep 0.1 && echo -ne "\r               :activE:";
+    sleep 0.1 && echo -ne "\r\\" && 
+    sleep 0.1 && echo -ne "\r|" && 
+    sleep 0.1 && echo -ne "\r/" &&
+    sleep 0.1 && echo -ne "\r-";
+    sleep 0.1 && echo -ne "\r   Activity: \\" && 
+    sleep 0.1 && echo -ne "\r   Activity: |" && 
+    sleep 0.1 && echo -ne "\r   Activity: /" &&
+    sleep 0.1 && echo -ne "\r   Activity: -";
+    sleep 0.1 && echo -ne "\r   :Active:" && 
+    sleep 0.1 && echo -ne "\r   :aCtive:" && 
+    sleep 0.1 && echo -ne "\r   :acTive:" && 
+    sleep 0.1 && echo -ne "\r   :actIve:" && 
+    sleep 0.1 && echo -ne "\r   :actiVe:" && 
+    sleep 0.1 && echo -ne "\r   :activE:";
+    sleep 0.1 && echo -ne "\r\\" && 
+    sleep 0.1 && echo -ne "\r|" && 
+    sleep 0.1 && echo -ne "\r/" &&
+    sleep 0.1 && echo -ne "\r-";
     ps|grep "yum" >/dev/null
     if [ $? -eq 1 ];then
         break
