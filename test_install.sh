@@ -71,6 +71,12 @@ do
     sleep 0.1 && echo -ne "\r|" && 
     sleep 0.1 && echo -ne "\r/" &&
     sleep 0.1 && echo -ne "\r-";
+    sleep 0.1 && echo -ne "\r                 001%" &&
+    sleep 0.1 && echo -ne "\r                 025%" &&
+    sleep 0.1 && echo -ne "\r                 059%" &&
+    sleep 0.1 && echo -ne "\r                 078%" &&
+    sleep 0.1 && echo -ne "\r                 100%" &&
+    sleep 0.1 && echo -ne "\r                 000%" ;
     ps|grep "yum" >/dev/null
     if [ $? -eq 1 ];then
         break
