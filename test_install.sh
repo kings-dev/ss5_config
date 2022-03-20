@@ -62,10 +62,10 @@ do
     sleep 0.25 && echo -ne "\r>>>>>>>>>";
     sleep 0.25 && echo -ne "\r>>>>>>>>>>";
     sleep 0.25 && echo -ne "\r>>>>>>>>>>>";
-    sleep 0.25 && echo -ne "\rActivity: \\" && sleep 0.25 && echo -ne "\rActivity: |" && sleep 0.25 && echo -ne "\rActivity: /" && sleep 0.25 && echo -ne "\rActivity: -";
-    sleep 0.25 && echo -ne "\r:Active:" && sleep .25 && echo -ne "\r:aCtive:" && sleep .25 && echo -ne "\r:acTive:" && sleep .25 && echo -ne "\r:actIve:" && sleep .25 && echo -ne "\r:actiVe:" && sleep .25 && echo -ne "\r:activE:";
-    x=`ps|grep "yum";echo $?`
-    if [ $x -eq 1 ];then
+    sleep 0.25 && echo -ne "\r              Activity: \\" && sleep 0.25 && echo -ne "\r             Activity: |" && sleep 0.25 && echo -ne "\r              Activity: /" && sleep 0.25 && echo -ne "\r              Activity: -";
+    sleep 0.25 && echo -ne "\r:             Active:" && sleep .25 && echo -ne "\r               :aCtive:" && sleep .25 && echo -ne "\r              :acTive:" && sleep .25 && echo -ne "\r              :actIve:" && sleep .25 && echo -ne "\r              :actiVe:" && sleep .25 && echo -ne "\r              :activE:";
+    ps|grep "yum" >/dev/null
+    if [ $? -eq 1 ];then
         break
         exit
     fi
