@@ -60,34 +60,25 @@ ip=`curl -s ifconfig.me`
             sleep 0.1 && echo -ne "\r\\  :Active: \\       20%  ..... "&&
             sleep 0.1 && echo -ne "\r|   :aCtive: |        27%  ...... "&&
             sleep 0.1 && echo -ne "\r/   :acTive: /        30%  ....... "&&
-            sleep 0.1 && echo -ne "\r-   :actIve: -        38%  ........ "&&
-            sleep 0.1 && echo -ne "\r\\  :actiVe: \\       45%  ......... "&&
-            sleep 0.1 && echo -ne "\r|   :activE: |        66%  .......... "&& 
+            sleep 0.1 && echo -ne "\r-   :actIve: -        42%  ........ "&&
+            sleep 0.1 && echo -ne "\r\\  :actiVe: \\       50%  ......... "&&
+            sleep 0.1 && echo -ne "\r|   :activE: |        61%  .......... "&& 
             sleep 0.1 && echo -ne "\r/   :activE: /        73%  ........... "&&
             sleep 0.1 && echo -ne "\r-   :actiVe: -        80%  ............ "&&
             sleep 0.1 && echo -ne "\r\\  :actIve: \\       84%  ............. "&&
             sleep 0.1 && echo -ne "\r|   :acTive: |        90%  .............. "&&
             sleep 0.1 && echo -ne "\r/   :aCtive: /        96%  ............... "&&
             sleep 0.1 && echo -ne "\r-   :Active: -       100%  ................ ";
-            
-            int i = 0;
-            char b[102];
-            const char *lb = "-\\|/";
-            b[0] = '\0';
-            while(i <=100 ){
-                printf("[%-100s][%d%%][%c]\r",b,i,lb[i%4]);
-                fflush(stdout);
-                b[i++] = '=';
-                b[i] = '\0';
-                usleep(100000);
-                            }
-            printf("\n");
-            return 0;
-           
+            printf("[%-100s][%d%%][%c]\r",b,i,lb[i%4]);
+            fflush(stdout);
+            b[i++] = '=';
+            b[i] = '\0';
+            usleep(100000);
             ps|grep "yum" >/dev/null
             if [ $? -eq 1 ];then
             break
             exit
+            printf("\n");
             fi
             done
             echo -e "\n"
