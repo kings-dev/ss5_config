@@ -51,8 +51,8 @@ ip=`curl -s ifconfig.me`
 cat << "EOF" > ./par.sh
 #!/bin/bash
 echo -e "\n\n"
-ps|grep "yum" >/dev/null 2&>1
-while [ $? == 0 ];
+par0=`ps|grep "yum" >/dev/null`
+while [ $par0 == 0 ];
 do
 sleep 0.1 && echo -ne "\r\\  Activity: \\       1%  . "&&
 sleep 0.1 && echo -ne "\r|   Activity: |        4%  .. "&&
@@ -70,8 +70,8 @@ sleep 0.1 && echo -ne "\r\\  :actIve: \\       84%  ............. "&&
 sleep 0.1 && echo -ne "\r|   :acTive: |        90%  .............. "&&
 sleep 0.1 && echo -ne "\r/   :aCtive: /        96%  ............... "&&
 sleep 0.1 && echo -ne "\r-   :Active: -       100%  ................ ";
-ps|grep "yum" >/dev/null 2&>1
-if [ $? = 0 ];then
+par1=ps|grep "yum" >/dev/null
+if [ $par1 = 0 ];then
 break
 exit
 fi
