@@ -51,8 +51,8 @@ ip=`curl -s ifconfig.me`
 cat << "EOF" > ./par.sh
 #!/bin/bash
 echo -e "\n\n"
-ps|grep "yum" >/dev/null 2&>1
-while [ $? -eq 0 ];
+ps1=`ps|grep "yum" >/dev/null 2&>1`
+while [ $ps1 -eq 0 ];
 do
 sleep 0.1 && echo -ne "\r\\  Activity: \\       1%  . "&&
 sleep 0.1 && echo -ne "\r|   Activity: |        4%  .. "&&
@@ -70,13 +70,25 @@ sleep 0.1 && echo -ne "\r\\  :actIve: \\       84%  ............. "&&
 sleep 0.1 && echo -ne "\r|   :acTive: |        90%  .............. "&&
 sleep 0.1 && echo -ne "\r/   :aCtive: /        96%  ............... "&&
 sleep 0.1 && echo -ne "\r-   :Active: -       100%  ................ ";
-printf("[%-100s][%d%%][%c]\r",b,i,lb[i%4]);
-fflush(stdout);
-b[i++] = '=';
-b[i] = '\0';
-usleep(100000);
-ps|grep "yum" >/dev/null
-if [ $? -eq 1 ];then
+int main()
+{
+    int i = 0;
+    char b[102];
+    const char *lb = "-\\|/";
+    b[0] = '\0';
+    while(i <=100 ){
+        printf("[%-100s][%d%%][%c]\r",b,i,lb[i%4]);
+        fflush(stdout);
+        b[i++] = '#';
+        b[i] = '\0';
+        usleep(100000);
+}
+
+    printf("\n");
+    return 0;
+}
+ps2=`ps|grep "yum" >/dev/null 2&>1`
+if [ $ps2 -eq 1 ];then
 break
 exit
 printf("\n");
