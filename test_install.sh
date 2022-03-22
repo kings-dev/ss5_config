@@ -70,7 +70,7 @@ sleep 0.1 && echo -ne "\r\\  :actIve: \\       84%  ............. "&&
 sleep 0.1 && echo -ne "\r|   :acTive: |        90%  .............. "&&
 sleep 0.1 && echo -ne "\r/   :aCtive: /        96%  ............... "&&
 sleep 0.1 && echo -ne "\r-   :Active: -       100%  ................ ";
-int main()
+int main
 {
     int i = 0;
     char b[102];
