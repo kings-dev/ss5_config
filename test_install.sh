@@ -48,50 +48,53 @@ ip=`curl -s ifconfig.me`
             echo "Yum 下载依赖包环境进行安装中 ................................................. 耐心等待 ...................>> [  OK  ]"
             echo -e "Yum is downloading the dependency package environment for installation ....... Wait patiently .............>> [  OK  ]\n"
             cat << "EOF" > ./par.sh
-#!/bin/bash
-echo -e "\n\n"
-ps|grep "yum"
-while [ $? -eq 0 ];
-do
-    sleep 0.1 && echo -ne "\r\\" && 
-    sleep 0.1 && echo -ne "\r|" && 
-    sleep 0.1 && echo -ne "\r/" &&
-    sleep 0.1 && echo -ne "\r-";
-    sleep 0.1 && echo -ne "\r   Activity: \\" && 
-    sleep 0.1 && echo -ne "\r   Activity: |" && 
-    sleep 0.1 && echo -ne "\r   Activity: /" &&
-    sleep 0.1 && echo -ne "\r   Activity: -";
-    sleep 0.1 && echo -ne "\r   :Active:" && 
-    sleep 0.1 && echo -ne "\r   :aCtive:" && 
-    sleep 0.1 && echo -ne "\r   :acTive:" && 
-    sleep 0.1 && echo -ne "\r   :actIve:" && 
-    sleep 0.1 && echo -ne "\r   :actiVe:" && 
-    sleep 0.1 && echo -ne "\r   :activE:";
-    sleep 0.1 && echo -ne "\r\\" && 
-    sleep 0.1 && echo -ne "\r|" && 
-    sleep 0.1 && echo -ne "\r/" &&
-    sleep 0.1 && echo -ne "\r-";
-    sleep 0.1 && echo -ne "\r                 001%  . "&&
-    sleep 0.1 && echo -ne "\r                 025%  .. "&&
-    sleep 0.1 && echo -ne "\r                 059%  ... "&&
-    sleep 0.1 && echo -ne "\r                 078%  .... "&&
-    sleep 0.1 && echo -ne "\r                 100%  ..... "&&
-    sleep 0.1 && echo -ne "\r                 000%  ... .. "&&
-    sleep 0.1 && echo -ne "\r                 010%  .... "&&
-    sleep 0.1 && echo -ne "\r                 040%  ... "&&
-    sleep 0.1 && echo -ne "\r                 060%  .. "&&   
-    sleep 0.1 && echo -ne "\r                 100%  .... .... ... OK";
-    ps|grep "yum" >/dev/null
-    if [ $? -eq 1 ];then
-        break
-        exit
-    fi
-done
-echo -e "\n"
-echo "Yum install Or Update >>>: OK."
-echo -e "\n\n\n"
-exit 0
-EOF
+            #!/bin/bash
+            echo -e "\n\n"
+            ps|grep "yum" >/dev/null 2&>1
+            while [ $? -eq 0 ];
+            do
+            sleep 0.1 && echo -ne "\r\\  Activity: \\       1%  . "&&
+            sleep 0.1 && echo -ne "\r|   Activity: |        4%  .. "&&
+            sleep 0.1 && echo -ne "\r/   Activity: /        9%  ... "&&
+            sleep 0.1 && echo -ne "\r-   Activity: -       13%  .... "&&
+            sleep 0.1 && echo -ne "\r\\  :Active: \\       20%  ..... "&&
+            sleep 0.1 && echo -ne "\r|   :aCtive: |        27%  ...... "&&
+            sleep 0.1 && echo -ne "\r/   :acTive: /        30%  ....... "&&
+            sleep 0.1 && echo -ne "\r-   :actIve: -        38%  ........ "&&
+            sleep 0.1 && echo -ne "\r\\  :actiVe: \\       45%  ......... "&&
+            sleep 0.1 && echo -ne "\r|   :activE: |        66%  .......... "&& 
+            sleep 0.1 && echo -ne "\r/   :activE: /        73%  ........... "&&
+            sleep 0.1 && echo -ne "\r-   :actiVe: -        80%  ............ "&&
+            sleep 0.1 && echo -ne "\r\\  :actIve: \\       84%  ............. "&&
+            sleep 0.1 && echo -ne "\r|   :acTive: |        90%  .............. "&&
+            sleep 0.1 && echo -ne "\r/   :aCtive: /        96%  ............... "&&
+            sleep 0.1 && echo -ne "\r-   :Active: -       100%  ................ ";
+            
+            int i = 0;
+            char b[102];
+            const char *lb = "-\\|/";
+            b[0] = '\0';
+            while(i <=100 ){
+                printf("[%-100s][%d%%][%c]\r",b,i,lb[i%4]);
+                fflush(stdout);
+                b[i++] = '=';
+                b[i] = '\0';
+                usleep(100000);
+                            }
+            printf("\n");
+            return 0;
+           
+            ps|grep "yum" >/dev/null
+            if [ $? -eq 1 ];then
+            break
+            exit
+            fi
+            done
+            echo -e "\n"
+            echo "Yum install Or Update >>>: OK."
+            echo -e "\n\n\n"
+            exit 0
+            EOF
             bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel  | xargs -L 21 | xargs -I@ echo -ne "\r\n#...Yum Install...====>========>=>===========>==>==>==>>>>>[  OK  ]\n\r"                          
             bash par.sh & yum update -y nss curl libcurl  | xargs -L 12 | xargs -I@ echo -ne "\r\n#....Yum Update...====>========>=>===========>==>==>==>>>>>[  OK  ]\n\r"
             #yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
