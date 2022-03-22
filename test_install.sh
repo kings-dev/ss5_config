@@ -74,7 +74,6 @@ ps2=`ps|grep "yum" >/dev/null 2&>1`
 if [ $ps2 -eq 1 ];then
 break
 exit
-printf("\n");
 fi
 done
 echo -e "\n"
