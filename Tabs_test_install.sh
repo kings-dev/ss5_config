@@ -54,7 +54,7 @@ echo -e "\n\n"
 par0=`ps|grep "yum" >/dev/null`
 while [ $par0 == 0 ];
 	do
-		sleep 0.1 && echo -ne "\r\\		Activity: \\		001%  . "&&
+		sleep 0.1 && echo -ne "\r\\		Activity: \\			001%  . "&&
 		sleep 0.1 && echo -ne "\r|		Activity: |			004%  .. "&&
 		sleep 0.1 && echo -ne "\r/		Activity: /			009%  ... "&&
 		sleep 0.1 && echo -ne "\r-		Activity: -			013%  .... "&&
