@@ -52,7 +52,7 @@ cat << "EOF" > ./par.sh
 #!/bin/bash
 echo -e "\n\n"
 par0=`ps|grep "yum" >/dev/null`
-while [ $par0 == 0 ];
+while [ $par0 = "0" ];
 	do
 		sleep 0.1 && echo -ne "\r\\		Activity: \\			001%  . "&&
 		sleep 0.1 && echo -ne "\r|		Activity: |			004%  .. "&&
@@ -71,7 +71,7 @@ while [ $par0 == 0 ];
 		sleep 0.1 && echo -ne "\r/		:aCtive: /			096%  ............... "&&
 		sleep 0.1 && echo -ne "\r-		:Active: -			100%  ................ ";
 		par1=ps|grep "yum" >/dev/null
-		if [ $par1 = 0 ];then
+		if [ $par1 = "1" ];then
 		break
 		exit
 		fi
