@@ -58,20 +58,20 @@ while [ "$par0" == "0" ];
 		sleep 0.1 && echo -ne "\r|		Activity: |		004%  .. "&&
 		sleep 0.1 && echo -ne "\r/		Activity: /		009%  ... "&&
 		sleep 0.1 && echo -ne "\r-		Activity: -		013%  .... "&&
-		sleep 0.1 && echo -ne "\r\\		:Active: \\		020%  ..... "&&
-		sleep 0.1 && echo -ne "\r|		:aCtive: |		027%  ...... "&&
-		sleep 0.1 && echo -ne "\r/		:acTive: /		030%  ....... "&&
-		sleep 0.1 && echo -ne "\r-		:actIve: -		042%  ........ "&&
-		sleep 0.1 && echo -ne "\r\\		:actiVe: \\		050%  ......... "&&
-		sleep 0.1 && echo -ne "\r|		:activE: |		061%  .......... "&&
-		sleep 0.1 && echo -ne "\r/		:activE: /		073%  ........... "&&
-		sleep 0.1 && echo -ne "\r-		:actiVe: -		080%  ............ "&&
-		sleep 0.1 && echo -ne "\r\\		:actIve: \\		084%  ............. "&&
-		sleep 0.1 && echo -ne "\r|		:acTive: |		090%  .............. "&&
-		sleep 0.1 && echo -ne "\r/		:aCtive: /		096%  ............... "&&
-		sleep 0.1 && echo -ne "\r-		:Active: -		100%  ................ ";
+		sleep 0.1 && echo -ne "\r\\		:Active:  \\		020%  ..... "&&
+		sleep 0.1 && echo -ne "\r|		:aCtive:  |		027%  ...... "&&
+		sleep 0.1 && echo -ne "\r/		:acTive:  /		030%  ....... "&&
+		sleep 0.1 && echo -ne "\r-		:actIve:  -		042%  ........ "&&
+		sleep 0.1 && echo -ne "\r\\		:actiVe:  \\		050%  ......... "&&
+		sleep 0.1 && echo -ne "\r|		:activE:  |		061%  .......... "&&
+		sleep 0.1 && echo -ne "\r/		:activE:  /		073%  ........... "&&
+		sleep 0.1 && echo -ne "\r-		:actiVe:  -		080%  ............ "&&
+		sleep 0.1 && echo -ne "\r\\		:actIve:  \\		084%  ............. "&&
+		sleep 0.1 && echo -ne "\r|		:acTive:  |		090%  .............. "&&
+		sleep 0.1 && echo -ne "\r/		:aCtive:  /		096%  ............... "&&
+		sleep 0.1 && echo -ne "\r-		:Active:  -		100%  ................ ";
 		par1=`ps|grep "yum" >/dev/null;echo $?`
-		if [ "$par1" == "1" ];then
+		if [ "$par1" != "1" ];then
 		break
 		exit
 		fi
@@ -97,7 +97,7 @@ EOF
 			chmod 777 /etc/rc.d/init.d/ss5
 			chmod a+x /etc/rc.d/init.d/ss5
 			confFile=/etc/opt/ss5/ss5.conf
-			sed -i '87c auth	0.0.0.0/0		-		-' $confFile
+			sed -i '87c auth	0.0.0.0/0	-		-' $confFile
 			sed -i '203c permit	-	0.0.0.0/0	-	0.0.0.0/0	-	-	-	-	-	' $confFile
 			sed -i '2c SS5_OPTS=" -u root -b 0.0.0.0:1080"' /etc/sysconfig/ss5
 			chmod a+x /etc/init.d/ss5
