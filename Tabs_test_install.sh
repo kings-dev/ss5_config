@@ -15,7 +15,7 @@ ip=`curl -s ifconfig.me`
 	if [[ -z "$huawei" ]];then
 		sed -i '$a export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' ~/.bash_profile
 		source ~/.bash_profile
-		read -ep "        现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
+		read -ep "		现在搭建ss5应用服务下载安装 Centos 7.6 环境依赖包和源包,
 		操作请输入（英文提示符号）再回车:
 		Now build the ss5 application service to download and install the Centos 7.6 environment dependency package and source package,
 		please enter (English prompt symbol) and press Enter:
