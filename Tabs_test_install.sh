@@ -52,7 +52,7 @@ cat << "EOF" > ./par.sh
 #!/bin/bash
 echo -e "\n\n"
 par0=`ps|grep "yum" >/dev/null`
-while [ $par0 = "0" ];
+while [ "$par0" = "0" ];
 	do
 		sleep 0.1 && echo -ne "\r\\		Activity: \\			001%  . "&&
 		sleep 0.1 && echo -ne "\r|		Activity: |			004%  .. "&&
@@ -71,7 +71,7 @@ while [ $par0 = "0" ];
 		sleep 0.1 && echo -ne "\r/		:aCtive: /			096%  ............... "&&
 		sleep 0.1 && echo -ne "\r-		:Active: -			100%  ................ ";
 		par1=ps|grep "yum" >/dev/null
-		if [ $par1 = "1" ];then
+		if [ "$par1" = "1" ];then
 		break
 		exit
 		fi
@@ -85,7 +85,7 @@ EOF
 			bash par.sh & yum -y install yum-utils wget net-tools gcc gcc-c++ automake autoconf libtool make pam-devel openldap-devel cyrus-sasl-devel openssl-devel | xargs -L 21 | xargs -I@ echo -ne "\r\n#...Yum Install...[########################################][  OK  ]\n\r"
 			bash par.sh & yum update -y nss curl libcurl  | xargs -L 12 | xargs -I@ echo -ne "\r\n#...Yum Update...[########################################][  OK  ]\n\r"
 			#yum clean all >/dev/null 2>&1;yum-complete-transaction >/dev/null 2>&1
-			echo -e "\r\n正在下载			'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]\n\r"
+			echo -e "\r\n正在下载		'ss5-3.8.9-8.tar.gz' .... 耐心等待 ........... [  OK  ]\n\r"
 			echo -e "\r\nDownloading	'ss5-3.8.9-8.tar.gz' .... Wait patiently ..... [  OK  ]\n\r"
 			wget -nc http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz >/dev/null 2>&1
 			lj=`pwd`
