@@ -99,8 +99,8 @@ EOF
 			chmod 777 /etc/rc.d/init.d/ss5
 			chmod a+x /etc/rc.d/init.d/ss5
 			confFile=/etc/opt/ss5/ss5.conf
-			sed -i '87c auth    0.0.0.0/0       -               -' $confFile
-			sed -i '203c permit -        0.0.0.0/0       -       0.0.0.0/0       -       -       -       -       -' $confFile
+			sed -i '87c auth	0.0.0.0/0	-		-' $confFile
+			sed -i '203c permit	-	0.0.0.0/0	-	0.0.0.0/0	-	-	-	-	-	' $confFile
 			sed -i '2c SS5_OPTS=" -u root -b 0.0.0.0:1080"' /etc/sysconfig/ss5
 			chmod a+x /etc/init.d/ss5
 			mkdir -p /var/run/ss5/
@@ -118,7 +118,7 @@ EOF
 			systemctl daemon-reload
 		;;
 		[nN][oO]|[nN])
-			read -ep "            默认端口为：1080,
+			read -ep "			默认端口为：1080,
 			如需修改SS5端口(1-65535)操作请输入（英文提示符号）再回车:
 			The default port is: 1080. If you need to modify the SS5 port (1-65535),
 			please enter (English prompt symbol) and press Enter:
